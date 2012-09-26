@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs nav-stacked">
+  <% if current_instructor %>
+    <li><a href="#">New Announcement</a></li>
+    <li><a href="#">New Agenda Item</a></li>
+    <li><a href="#">New Instructions</a></li>
+  <% end %>
+  
+  <% if current_instructor || current_user %>
+    <li><a href="#">New Discussion Thread</a></li>
+    <li><a href="#">New Resource</a></li>
+  <% end %>
+</ul>
+
+<div class="hero-unit span10" style="margin-left: 10%; text-align: center;">
+  CALENDAR
+</div>

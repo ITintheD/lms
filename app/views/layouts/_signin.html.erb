@@ -1,0 +1,35 @@
+<% if current_user %>
+  <ul class="nav pull-right">
+    <li id="fat-menu" class="dropdown">
+      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Hello, Student<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+        <li><a tabindex="-1" href="#">Profile</a></li>
+        <li class="divider"></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => "delete", :tabindex=>"-1" %></li>
+      </ul>
+    </li>
+  </ul>
+<% elsif current_instructor %>
+  <ul class="nav pull-right">
+    <li id="fat-menu" class="dropdown">
+      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Hello, Instructor<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+        <li><a tabindex="-1" href="#">Profile</a></li>
+        <li class="divider"></li>
+        <li><%= link_to "Sign out", destroy_instructor_session_path, :method => "delete", :tabindex=>"-1" %></li>
+      </ul>
+    </li>
+  </ul>    
+<% else %>
+  <ul class="nav pull-right">
+    <li id="fat-menu" class="dropdown">
+      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Sign in<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+        <li><%= link_to "Sign in as Student", new_user_session_path, :tabindex=>"-1" %></li>
+        <li><%= link_to "Sign in as Instructor", new_instructor_session_path, :tabindex=>"-1" %></li>
+        <li class="divider"></li>
+        <li><a tabindex="-1" href="#">Sign up</a></li>
+      </ul>
+    </li>
+  </ul>
+<% end %>

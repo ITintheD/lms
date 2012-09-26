@@ -1,4 +1,23 @@
 MiniLms::Application.routes.draw do
+  devise_for :instructors, :controllers => { :sessions => "instructors/sessions" }
+  devise_for :users, :controllers => { :sessions => "users/sessions" }
+  
+  get "pages/index"
+  
+  get "pages/show"
+
+  get "pages/edit"
+
+  get "pages/new"
+  
+  post "pages/create"
+  
+  put "pages/update"
+  
+  delete "pages/destroy"
+
+  root :to => 'pages#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

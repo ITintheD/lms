@@ -1,0 +1,25 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Project Name</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Announcements</a></li>
+      <li id="fat-menu" class="dropdown">
+          <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Weekly Agenda<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+            <li><a tabindex="-1" href="#">Current Week</a></li>
+            <li class="divider"></li>
+            <li><a tabindex="-1" href="#">Week 1</a></li>
+          </ul>
+        </li>  
+      </li>
+      <li><a href="#">Instructions</a></li>
+      <li><a href="#">Discussion</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Meet the Instructors</a></li>
+      <li><a href="#">Meet the Students</a></li>
+      
+    </ul>
+    <%= render :partial => "/layouts/signin" %>
+  </div>
+</div>
