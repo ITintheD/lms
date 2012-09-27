@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyString
+  resourceable_id: 1
+  resourceable_type: MyString
+  link: MyString
+  featured: false
+  status: MyString
+
+two:
+  title: MyString
+  description: MyString
+  resourceable_id: 1
+  resourceable_type: MyString
+  link: MyString
+  featured: false
+  status: MyString

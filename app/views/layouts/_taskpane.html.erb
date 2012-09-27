@@ -1,13 +1,13 @@
 <ul class="nav nav-tabs nav-stacked">
   <% if current_instructor %>
-    <li><a href="#">New Announcement</a></li>
-    <li><a href="#">New Agenda Item</a></li>
-    <li><a href="#">New Instructions</a></li>
+    <li><%= link_to "New Announcement", new_announcement_path,  :tabindex => "-1" %></li>
+    <li><%= link_to "New Agenda Item", new_agenda_path,  :tabindex => "-1" %></li>
+    <li><%= link_to "New Instruction Item", new_instruction_path,  :tabindex => "-1" %></li>
   <% end %>
   
   <% if current_instructor || current_user %>
-    <li><a href="#">New Discussion Thread</a></li>
-    <li><a href="#">New Resource</a></li>
+    <li><%= link_to "New Discussion", new_question_path,  :tabindex => "-1" %></li>
+    <li><%= link_to "New Resource", new_resource_path,  :tabindex => "-1" %></li>
   <% end %>
 </ul>
 

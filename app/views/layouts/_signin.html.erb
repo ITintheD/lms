@@ -15,6 +15,7 @@
       <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Hello, Instructor<b class="caret"></b></a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
         <li><a tabindex="-1" href="#">Profile</a></li>
+        <li><%= link_to "Admin", admin_root_path, :tabindex=>"-1" %></li>        
         <li class="divider"></li>
         <li><%= link_to "Sign out", destroy_instructor_session_path, :method => "delete", :tabindex=>"-1" %></li>
       </ul>
@@ -28,7 +29,8 @@
         <li><%= link_to "Sign in as Student", new_user_session_path, :tabindex=>"-1" %></li>
         <li><%= link_to "Sign in as Instructor", new_instructor_session_path, :tabindex=>"-1" %></li>
         <li class="divider"></li>
-        <li><a tabindex="-1" href="#">Sign up</a></li>
+        <li><%= link_to "Sign up as Student", new_user_registration_path, :tabindex=>"-1" %></li>
+        <li><%= link_to "Sign up as Instructor", new_instructor_registration_path, :tabindex=>"-1" %></li>      
       </ul>
     </li>
   </ul>

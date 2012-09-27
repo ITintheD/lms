@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926143721) do
+ActiveRecord::Schema.define(:version => 20120927020215) do
+
+  create_table "agendas", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "week"
+    t.boolean  "featured"
+    t.integer  "instructor_id"
+    t.string   "status"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "announcements", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "instructor_id"
+    t.boolean  "featured"
+    t.string   "status"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "instructions", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "instructor_id"
+    t.boolean  "featured"
+    t.string   "status"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "instructors", :force => true do |t|
     t.string   "firstname"
@@ -33,6 +64,39 @@ ActiveRecord::Schema.define(:version => 20120926143721) do
 
   add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
   add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
+
+  create_table "intstructions", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "instructor_id"
+    t.boolean  "featured"
+    t.string   "status"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "questionable_id"
+    t.string   "questionable_type"
+    t.boolean  "featured"
+    t.string   "status"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "resources", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "resourceable_id"
+    t.string   "resourceable_type"
+    t.string   "link"
+    t.boolean  "featured"
+    t.string   "status"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "firstname"

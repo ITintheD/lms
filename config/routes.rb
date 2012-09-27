@@ -1,4 +1,14 @@
 MiniLms::Application.routes.draw do
+  resources :resources
+
+  resources :instructions
+
+  resources :questions
+
+  resources :agendas
+
+  resources :announcements
+
   devise_for :instructors, :controllers => { :sessions => "instructors/sessions" }
   devise_for :users, :controllers => { :sessions => "users/sessions" }
   
@@ -16,6 +26,8 @@ MiniLms::Application.routes.draw do
   
   delete "pages/destroy"
 
+  match "/admin" => "admin/students#index", :as => "admin_root"
+  
   root :to => 'pages#index'
 
   # The priority is based upon order of creation:
