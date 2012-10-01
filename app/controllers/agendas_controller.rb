@@ -40,6 +40,7 @@ class AgendasController < ApplicationController
   # POST /agendas
   # POST /agendas.json
   def create
+    raise
     @agenda = Agenda.new(params[:agenda])
 
     respond_to do |format|

@@ -1,8 +1,8 @@
 <ul class="nav nav-tabs nav-stacked">
   <% if current_instructor %>
     <li><%= link_to "New Announcement", new_announcement_path,  :tabindex => "-1" %></li>
-    <li><%= link_to "New Agenda Item", new_agenda_path,  :tabindex => "-1" %></li>
-    <li><%= link_to "New Instruction Item", new_instruction_path,  :tabindex => "-1" %></li>
+    <li><%= link_to "New Agenda", new_agenda_path,  :tabindex => "-1" %></li>
+    <li><%= link_to "New Instruction", new_instruction_path,  :tabindex => "-1" %></li>
   <% end %>
   
   <% if current_instructor || current_user %>
