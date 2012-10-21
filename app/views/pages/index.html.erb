@@ -1,7 +1,27 @@
-<div class ="hero-unit">
-  <h3>Featured Activity</h3>
-</div>
+<h1>Listing pages</h1>
 
-<h3>Recent Activity</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Permalink</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<p>Stream of Recent Activity...</p>
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.name %></td>
+    <td><%= page.permalink %></td>
+    <td><%= page.content %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>

@@ -1,0 +1,17 @@
+<h1>Agendas</h1>
+<div class ="hero-unit">
+  <h3>Featured Agenda</h3>
+</div>
+
+<div>
+  <% @agendas.each do |agenda| %>
+    <div class="well">
+      <h3><%= agenda.title %>, Week: <%= agenda.week %></h3>
+      <p><%= agenda.body %></p>
+      <p><%= agenda.instructor.firstname %></p>
+    </div>
+  <% end %>
+</div>
+
+<br />
+

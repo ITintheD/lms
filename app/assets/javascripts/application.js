@@ -12,4 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery-fileupload/basic
 //= require_tree .
+
+
+
+$(function () {
+  $('input.upload').fileupload({
+      dataType: 'json',
+      url: '/instructors/registrations/create_photo/' + $('input.upload').attr('data-resource_id'), 
+      success: function (data) {
+    	$('#instructor_avatar').empty();
+        $('#instructor_avatar').append('<img src="' + data.url + '">');
+      }
+    });
+ });
