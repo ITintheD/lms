@@ -1,0 +1,6 @@
+<div class="list-item">
+  <%= image_tag(instructor.photo_url(:thumb)) unless instructor.photo_url.blank? %>
+  <%= instructor.firstname %>
+  <%= instructor.email %>
+  <%= instructor.description %>
+</div>

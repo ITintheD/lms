@@ -3,4 +3,8 @@ class Announcement < ActiveRecord::Base
   mount_uploader :doc, DocUploader
   belongs_to :instructor
   
+  def self.current_featured
+    Announcement.where(:featured => true).order('created_at').first
+  end
+  
 end

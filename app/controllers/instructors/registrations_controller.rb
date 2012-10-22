@@ -1,5 +1,7 @@
 class Instructors::RegistrationsController < Devise::RegistrationsController
 
+  skip_before_filter :check_access, :except => :create_photo
+  
 	def create_photo
 	  @instructor = Instructor.find(params[:id]) 	
 	  respond_to do |format|

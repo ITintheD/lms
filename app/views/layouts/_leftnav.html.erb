@@ -1,11 +1,15 @@
 <ul class="nav nav-tabs nav-stacked bs-docs-sidenav affix span2">
-  <li><%= link_to "Announcements", announcements_path %></li>
-  <li><%= link_to "Agendas", agendas_path %></li>
-  <li><%= link_to "Stand Ups", "#" %></li>
-  <!--<li><#%= link_to "Discussions", questions_path %></li>-->
-  <li><%= link_to "Resources", resources_path %></li>
-  <li><a href="#">Instructors</a></li>
-  <li><a href="#">Students</a></li>
+  <% if current_instructor || current_user %>
+    <li><%= link_to "Announcements", announcements_path %></li>
+    <li><%= link_to "Agendas", agendas_path %></li>
+    <li><%= link_to "Stand Ups (coming soon)", "#" %></li>
+    <!--<li><#%= link_to "Discussions", questions_path %></li>-->
+    <li><%= link_to "Resources (coming soon)", "#" %></li>
+    <li><%= link_to "Instructors", instructors_path %></li>
+    <li><a href="#">Students</a></li>
+  <% else %>
+    <li><%= link_to "Instructors", instructors_path %></li>
+  <% end %>
   
   
   

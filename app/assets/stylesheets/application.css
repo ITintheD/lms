@@ -13,19 +13,21 @@
  */
 
 .list-item {
-	padding: 10px;
+	padding: 20px;
 	margin-bottom: 10px;
 	background-color: #ECF7FD;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
+	margin-left: 25px;
+	
 }
 
 
 .hero-unit-featured {
 	padding: 15px;
 	margin-bottom: 10px;
-	height: 120px;
+	height-min: 120px;
 	background-color: #F8F8F8;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -38,3 +40,35 @@
 	width: 178px;
 	padding: 60px;
 }
+
+.list-item .title, .hero-unit-featured .title {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.list-item .body-text p, .hero-unit-featured .body-text p {
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info {
+	font-size: 14px;
+	font-style: italic;
+	
+}
+
+.item {
+	padding: 20px;
+	margin-bottom: 10px;
+	background-color: #ECF7FD;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.item .body-text p {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+

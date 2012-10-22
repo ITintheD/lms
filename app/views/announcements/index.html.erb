@@ -1,10 +1,15 @@
-<h1>Listing announcements</h1>
+<h1>Announcements</h1>
 
 <div class ="hero-unit-featured">
-  <h3>Featured Activity</h3>
+  <h3>Featured Announcement</h3>
+  <%= render :partial => "announcement", :locals => { :announcement => @featured, :class_name => 'featured-item' } %>
 </div>
 
-<%= render :partial => "announcement", :collection => @announcements, :as => :announcement %>
+<br/>
+
+<div class="list-items">
+  <%= render :partial => "announcement", :collection => @announcements, :as => :announcement, :locals => { :class_name => 'list-item' } %>
+</div>
 
 <br />
 

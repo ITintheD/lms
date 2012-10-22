@@ -2,8 +2,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
-
+    @announcements = Announcement.order('created_at DESC')
+    @featured = Announcement.current_featured
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @announcements }
