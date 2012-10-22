@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927020215) do
+ActiveRecord::Schema.define(:version => 20121022001749) do
 
   create_table "agendas", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120927020215) do
     t.string   "status"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "doc"
   end
 
   create_table "instructions", :force => true do |t|
@@ -60,20 +61,21 @@ ActiveRecord::Schema.define(:version => 20120927020215) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "photo"
   end
 
   add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
   add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
 
-  create_table "intstructions", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "instructor_id"
-    t.boolean  "featured"
-    t.string   "status"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
   create_table "questions", :force => true do |t|
     t.string   "title"
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20120927020215) do
     t.string   "status"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "doc"
   end
 
   create_table "users", :force => true do |t|
@@ -116,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20120927020215) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "photo"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

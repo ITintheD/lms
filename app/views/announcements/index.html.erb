@@ -1,30 +1,10 @@
 <h1>Listing announcements</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Instructor</th>
-    <th>Featured</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class ="hero-unit-featured">
+  <h3>Featured Activity</h3>
+</div>
 
-<% @announcements.each do |announcement| %>
-  <tr>
-    <td><%= announcement.title %></td>
-    <td><%= announcement.body %></td>
-    <td><%= announcement.instructor_id %></td>
-    <td><%= announcement.featured %></td>
-    <td><%= announcement.status %></td>
-    <td><%= link_to 'Show', announcement %></td>
-    <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
-    <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => "announcement", :collection => @announcements, :as => :announcement %>
 
 <br />
 

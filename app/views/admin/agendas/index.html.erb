@@ -1,0 +1,16 @@
+<h1>Agendas</h1>
+
+<%= link_to "New", new_admin_agenda_path %>
+
+<div>
+  <% @agendas.each do |agenda| %>
+    <div class="well">
+      <h3><%= agenda.title %>, Week: <%= agenda.week %></h3>
+      <p><%= agenda.body %></p>
+      <p><%= agenda.instructor.firstname %></p>
+    </div>
+  <% end %>
+</div>
+
+<br />
+

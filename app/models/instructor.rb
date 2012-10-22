@@ -6,8 +6,13 @@ class Instructor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, :firstname, :lastname, :description
   # attr_accessible :title, :body
+  mount_uploader :photo, PhotoUploader
+
   
   has_many :agendas
+  has_many :announcements
+  has_many :instructions
+  has_many :resources
 end
