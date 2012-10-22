@@ -1,5 +1,5 @@
 module Admin
-	class ResourcesController < ApplicationController
+	class ResourcesController < AdminController
 	  # GET /resources
 	  # GET /resources.json
 	  def index

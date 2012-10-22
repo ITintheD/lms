@@ -1,5 +1,5 @@
 module Admin
-	class AgendasController < ApplicationController
+	class AgendasController < AdminController
 	  # GET /agendas
 	  # GET /agendas.json
 	  def index
@@ -41,7 +41,6 @@ module Admin
 	  # POST /agendas
 	  # POST /agendas.json
 	  def create
-		raise
 		@agenda = Agenda.new(params[:agenda])
 
 		respond_to do |format|

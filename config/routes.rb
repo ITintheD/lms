@@ -9,7 +9,9 @@ MiniLms::Application.routes.draw do
   	
   devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations" }
   
-  resources :resources, :instructions, :questions, :agendas, :announcements
+  resources :resources, :instructions, :questions, :agendas
+  
+  resources :announcements, :only => [:show, :index]
 
   namespace :admin do
 	resources :resources, :instructions, :questions, :agendas, :announcements, :students

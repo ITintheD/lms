@@ -1,4 +1,6 @@
 <h1>Editing agenda</h1>
+<%= form_for(@agenda, :url => admin_agenda_path(@agenda), :html => {:method => :put}) do |f| %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
 
-<%= render 'form' %>
 

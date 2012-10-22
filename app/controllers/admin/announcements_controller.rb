@@ -1,5 +1,5 @@
 module Admin
-	class AnnouncementsController < ApplicationController
+	class AnnouncementsController < AdminController
 	  # GET /announcements
 	  # GET /announcements.json
 	  def index
@@ -41,11 +41,11 @@ module Admin
 	  # POST /announcements
 	  # POST /announcements.json
 	  def create
-		@announcement = Announcement.new(params[:announcement])
-
+		@announcement = Announcement.create(params[:announcement])
+		@announcement.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @announcement.save
-			format.html { redirect_to @announcement, notice: 'Announcement was successfully created.' }
+			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully created.' }
 			format.json { render json: @announcement, status: :created, location: @announcement }
 		  else
 			format.html { render action: "new" }

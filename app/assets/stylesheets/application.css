@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+.list-item {
+	padding: 10px;
+	margin-bottom: 10px;
+	background-color: #ECF7FD;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+
+.hero-unit-featured {
+	padding: 15px;
+	margin-bottom: 10px;
+	height: 120px;
+	background-color: #F8F8F8;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.leftnavpane {
+	background-color: #F8F8F8;
+	height: 100%;
+	width: 178px;
+	padding: 60px;
+}
