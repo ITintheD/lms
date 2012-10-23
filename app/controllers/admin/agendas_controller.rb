@@ -42,7 +42,7 @@ module Admin
 	  # POST /agendas.json
 	  def create
 		@agenda = Agenda.new(params[:agenda])
-
+		@agenda.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @agenda.save
 			format.html { redirect_to @agenda, notice: 'Agenda was successfully created.' }

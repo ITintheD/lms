@@ -7,7 +7,7 @@
     <div class="well">
       <h3><%= agenda.title %>, Week: <%= agenda.week %></h3>
       <p><%= agenda.body %></p>
-      <p><%= agenda.instructor.firstname %></p>
+      <p><%= agenda.instructor.email unless agenda.instructor.blank? %></p>
     </div>
   <% end %>
 </div>

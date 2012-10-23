@@ -2,8 +2,8 @@ class AgendasController < ApplicationController
   # GET /agendas
   # GET /agendas.json
   def index
-    @agendas = Agenda.all
-
+    @agendas = Agenda.order('created_at DESC')
+    @featured = Agenda.current_featured
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @agendas }

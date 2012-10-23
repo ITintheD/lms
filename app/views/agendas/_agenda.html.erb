@@ -1,0 +1,5 @@
+<div class="<%= class_name %>">
+  <p class="title"><%= link_to agenda.title, agenda_path(agenda) %></p>
+  <div class="body-text"><%= raw truncate(agenda.body, :length => 300, :omission => '...') %></div>
+  <p class="instructor-info">Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
+</div>

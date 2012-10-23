@@ -1,16 +1,16 @@
 <h1>Agendas</h1>
-<div class ="hero-unit">
-  <h3>Featured Agenda</h3>
-</div>
 
-<div>
-  <% @agendas.each do |agenda| %>
-    <div class="well">
-      <h3><%= agenda.title %>, Week: <%= agenda.week %></h3>
-      <p><%= agenda.body %></p>
-      <p><%= agenda.instructor.firstname %></p>
-    </div>
-  <% end %>
+<% unless @featured.blank? %>
+	<div class ="hero-unit-featured">
+	  <h3>Current Agenda</h3>
+	  <%= render :partial => "agenda", :locals => { :agenda => @featured, :class_name => 'featured-item' } %>
+	</div>
+<% end %>
+
+<br/>
+
+<div class="list-items">
+  <%= render :partial => "agenda", :collection => @agendas, :as => :agenda, :locals => { :class_name => 'list-item' } %>
 </div>
 
 <br />
