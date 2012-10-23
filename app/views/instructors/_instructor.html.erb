@@ -1,6 +1,11 @@
-<div class="list-item">
-  <%= image_tag(instructor.photo_url(:thumb)) unless instructor.photo_url.blank? %>
-  <%= instructor.firstname %>
-  <%= instructor.email %>
-  <%= instructor.description %>
+<div class="profile-item">
+  <div class="profile-pix" style="float: left;">
+    <%= image_tag(instructor.photo_url(:thumb)) unless instructor.photo_url.blank? %>
+  </div>
+  <div class="profile-text">
+    <p class="name-info"><%= link_to instructor.firstname, instructor_path(instructor)  unless instructor.firstname.blank? %></p>
+    <p class="body-text"><%= truncate(instructor.description, :length => 360, :omission => "..." ) %></p>  
+    <p class="email-info"><%= instructor.email %></p>
+  </div>
+  <div class="clearfix"></div>
 </div>

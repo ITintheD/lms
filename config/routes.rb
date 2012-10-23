@@ -8,12 +8,16 @@ MiniLms::Application.routes.draw do
   	end
   	
   devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations" }
+    as :user do
+  	  match "/users/registrations/create_photo/:id" => "users/registrations#create_photo", :as => :create_photo
+      
+    end
   
   resources :resources, :questions, :agendas
   
   resources :announcements, :only => [:show, :index]
   resources :instructors, :only => [:show, :index]
-  resources :students, :only => [:show, :index]
+  resources :users, :only => [:show, :index]
   
 
   namespace :admin do
@@ -24,7 +28,7 @@ MiniLms::Application.routes.draw do
   
   get "/about" => "pages#about", :as => :about_page
 
-  match "/admin" => "admin/students#index", :as => "admin_root"
+  match "/admin" => "admin/announcements#index", :as => "admin_root"
 
   root :to => 'announcements#index'
   

@@ -46,12 +46,12 @@
 	font-size: 24px;
 }
 
-.list-item .body-text p, .hero-unit-featured .body-text p {
+.list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text  {
 	font-size: 18px;
 	line-height: 1.5;
 }
 
-.list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info {
+.list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info, .profile-item .email-info {
 	font-size: 14px;
 	font-style: italic;
 	
@@ -66,9 +66,39 @@
 	border-radius: 6px;
 }
 
+.profile-item {
+	margin-bottom: 10px;
+	background-color: #ECF7FD;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 15px;
+}
+
+.profile-item img {
+	padding-right: 10px;
+}
+
+.profile-item .name-info {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.profile-item .profile-text {
+	padding-left: 120px;
+}
+
 .item .body-text p {
 	font-size: 16px;
 	line-height: 1.5;
 }
 
+
+.admin_dash {
+	font-size: 30px;
+	padding-top: 20px;
+	margin-left: 40%;
+	margin-right: 40%;
+	text-transform: uppercase;
+}
 

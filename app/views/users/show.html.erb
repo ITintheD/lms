@@ -1,0 +1,12 @@
+<div class="item">
+  <% image_tag(@user.photo_url) unless @user.photo_url.blank? %>
+  
+  <% unless @user.firstname.blank? %>
+    <h2><%= @user.firstname.humanize %> <%= @user.lastname.humanize %></h2>
+  <% end %>
+  <div class="body">
+    <div class="body-text"><%= @user.description %></div>
+    <p class="instructor-info"><%= @user.email  %></p>
+    
+  <div>
+</div>

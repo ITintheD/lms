@@ -1,16 +1,20 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <%= link_to "Project Name", root_path, :class => "brand" %>
+    <%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px" %>
     <% if current_user || current_instructor %>
       <ul class="nav">
         <li class="active"><a href="#">Home</a></li>
-        <li id="fat-menu" class="dropdown">
+        <li><%= link_to 'Weekly Agendas', agendas_path %></li>
+          <!--
+          <li id="fat-menu" class="dropdown">
+          
             <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Weekly Agendas<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-              <li><%= link_to "Current Week", agendas_path,  :tabindex => "-1" %></li>
+              <li><#%= link_to "Current Week", agendas_path,  :tabindex => "-1" %></li>
               <li class="divider"></li>
               <li><a tabindex="-1" href="#">Week 1</a></li>
             </ul>
+          -->
           </li>  
         </li>
         <li><%= link_to "About", about_page_path %></li>

@@ -61,7 +61,7 @@ module Admin
 
 		respond_to do |format|
 		  if @announcement.update_attributes(params[:announcement])
-			format.html { redirect_to @announcement, notice: 'Announcement was successfully updated.' }
+			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully updated.' }
 			format.json { head :no_content }
 		  else
 			format.html { render action: "edit" }
@@ -77,7 +77,7 @@ module Admin
 		@announcement.destroy
 
 		respond_to do |format|
-		  format.html { redirect_to announcements_url }
+		  format.html { redirect_to admin_announcements_path }
 		  format.json { head :no_content }
 		end
 	  end

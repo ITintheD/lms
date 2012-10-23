@@ -45,7 +45,7 @@ module Admin
 		@agenda.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @agenda.save
-			format.html { redirect_to @agenda, notice: 'Agenda was successfully created.' }
+			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully created.' }
 			format.json { render json: @agenda, status: :created, location: @agenda }
 		  else
 			format.html { render action: "new" }
@@ -61,7 +61,7 @@ module Admin
 
 		respond_to do |format|
 		  if @agenda.update_attributes(params[:agenda])
-			format.html { redirect_to @agenda, notice: 'Agenda was successfully updated.' }
+			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
 			format.json { head :no_content }
 		  else
 			format.html { render action: "edit" }
@@ -77,7 +77,7 @@ module Admin
 		@agenda.destroy
 
 		respond_to do |format|
-		  format.html { redirect_to agendas_url }
+		  format.html { redirect_to admin_agendas_path }
 		  format.json { head :no_content }
 		end
 	  end

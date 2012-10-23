@@ -1,15 +1,10 @@
 <h1>Agendas</h1>
+<br/>
 
-<%= link_to "New", new_admin_agenda_path %>
+<p><%= link_to "Create New", new_admin_agenda_path, :class => "btn" %></p>
 
-<div>
-  <% @agendas.each do |agenda| %>
-    <div class="well">
-      <h3><%= agenda.title %>, Week: <%= agenda.week %></h3>
-      <p><%= agenda.body %></p>
-      <p><%= agenda.instructor.email unless agenda.instructor.blank? %></p>
-    </div>
-  <% end %>
+<div class="list-items">
+  <%= render :partial => "agenda", :collection => @agendas, :as => :agenda, :locals => { :class_name => 'list-item' } %>
 </div>
 
 <br />

@@ -22,10 +22,11 @@
 $(function () {
   $('input.upload').fileupload({
       dataType: 'json',
-      url: '/instructors/registrations/create_photo/' + $('input.upload').attr('data-resource_id'), 
+      url: '/'+ $('input.upload').attr('data-resource_name') + '/registrations/create_photo/' + $('input.upload').attr('data-resource_id'), 
       success: function (data) {
-    	$('#instructor_avatar').empty();
-        $('#instructor_avatar').append('<img src="' + data.url + '">');
+			var class_name = "#" + data.location;
+    	$( class_name ).empty();
+        $( class_name ).append('<img src="' + data.url + '">');
       }
     });
  });

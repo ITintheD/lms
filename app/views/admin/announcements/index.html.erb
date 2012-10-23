@@ -1,31 +1,11 @@
-<h1>Listing announcements</h1>
+<h1>Announcements</h1>
+<br/>
+<p><%= link_to 'Create New', new_admin_announcement_path, :class => "btn" %></p>
 
-<p><%= link_to 'New', new_admin_announcement_path %></p>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Instructor</th>
-    <th>Featured</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="list-items">
+  <%= render :partial => "announcement", :collection => @announcements, :as => :announcement, :locals => { :class_name => 'list-item' } %>
+</div>
 
-<% @announcements.each do |announcement| %>
-  <tr>
-    <td><%= announcement.title %></td>
-    <td><%= announcement.body %></td>
-    <td><%= announcement.instructor_id %></td>
-    <td><%= announcement.featured %></td>
-    <td><%= announcement.status %></td>
-    <td><%= link_to 'Show', admin_announcement_path(announcement) %></td>
-    <td><%= link_to 'Edit', edit_admin_announcement_path(announcement) %></td>
-    <td><%= link_to 'Destroy', admin_announcement_path(announcement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
 

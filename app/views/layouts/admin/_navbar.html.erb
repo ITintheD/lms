@@ -1,11 +1,12 @@
 <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <%= link_to "Project Name", root_path, :class => "brand" %>
+  <div class="navbar-inner" style ="background-image: none; background-color: #194775;">
+    <%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px" %>
     <ul class="nav">
       <li class="active"><%= link_to 'Home', root_path %></li>
       <li><a href="#">Students</a></li>
     </ul>
     <%= render :partial => "/layouts/signin" %>
+    <div class="admin_dash">Admin Dashboard</div>
   </div>
 </div>
 

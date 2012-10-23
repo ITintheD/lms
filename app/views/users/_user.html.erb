@@ -1,0 +1,11 @@
+<div class="profile-item">
+  <div class="profile-pix" style="float: left;">
+    <%= image_tag(user.photo_url(:thumb)) unless user.photo_url.blank? %>
+  </div>
+  <div class="profile-text">
+    <p class="name-info"><%= link_to user.firstname, user_path(user) unless user.firstname.blank? %></p>
+    <p class="body-text"><%= truncate(user.description, :length => 360, :omission => "..." ) %></p>  
+    <p class="email-info"><%= user.email %></p>
+  </div>
+  <div class="clearfix"></div>
+</div>

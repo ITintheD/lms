@@ -2,11 +2,11 @@
   <% if current_instructor || current_user %>
     <li><%= link_to "Announcements", announcements_path %></li>
     <li><%= link_to "Agendas", agendas_path %></li>
-    <li><%= link_to "Stand Ups (coming soon)", "#" %></li>
+    <li><%= link_to "Stand Ups (Coming Soon)", "#" %></li>
+    <li><%= link_to "Resources (Coming Soon)", "#" %></li>
     <!--<li><#%= link_to "Discussions", questions_path %></li>-->
-    <li><%= link_to "Resources (coming soon)", "#" %></li>
     <li><%= link_to "Instructors", instructors_path %></li>
-    <li><a href="#">Students</a></li>
+    <li><%= link_to "Students", users_path %></li>
   <% else %>
     <li><%= link_to "Instructors", instructors_path %></li>
   <% end %>

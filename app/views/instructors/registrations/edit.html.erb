@@ -2,7 +2,7 @@
 <div>
 <%= form_for(resource, :as => resource_name, :url => create_photo_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= f.label :upload_avatar %>
-  <%= f.file_field :photo, :class => "upload", "data-resource_id" => resource.id, :name => "instructor[photo]" %></div>
+  <%= f.file_field :photo, :class => "upload", "data-resource_id" => resource.id, "data-resource_name" => "instructors", :name => "instructor[photo]" %></div>
 <% end %>
 
 <div id="instructor_avatar" class="cf">
