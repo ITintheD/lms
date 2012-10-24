@@ -13,8 +13,7 @@ MiniLms::Application.routes.draw do
       
     end
   
-  resources :resources, :questions, :agendas
-  
+  resources :questions, :agendas, :resources
   resources :announcements, :only => [:show, :index]
   resources :instructors, :only => [:show, :index]
   resources :users, :only => [:show, :index]

@@ -1,40 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @resource.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @resource.description %>
-</p>
-
-<p>
-  <b>Resourceable:</b>
-  <%= @resource.resourceable_id %>
-</p>
-
-<p>
-  <b>Resourceable type:</b>
-  <%= @resource.resourceable_type %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%= @resource.link %>
-</p>
-
-<p>
-  <b>Featured:</b>
-  <%= @resource.featured %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @resource.status %>
-</p>
-
-
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>
+<div class="item">
+  <h2><%= @resource.title.humanize %> Agenda</h2>
+  <div class="body-text"><%= @resource.description %></div>
+  <p class="link"><%= link_to @resource.link, @resource.link unless @resource.link.blank? %></p>
+  <p class="instructor-info">Created at <%= time_ago_in_words(@resource.created_at) %> ago</p>
+</div>

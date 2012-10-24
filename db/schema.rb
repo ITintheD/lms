@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(:version => 20121024121548) do
     t.integer  "week_id"
   end
 
-  create_table "instructions", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "instructor_id"
-    t.boolean  "featured"
-    t.string   "status"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "instructors", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -68,16 +58,6 @@ ActiveRecord::Schema.define(:version => 20121024121548) do
 
   add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
   add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
-
-  create_table "pages", :force => true do |t|
-    t.string   "name"
-    t.string   "permalink"
-    t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
   create_table "questions", :force => true do |t|
     t.string   "title"

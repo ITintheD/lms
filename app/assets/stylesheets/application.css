@@ -102,3 +102,6 @@
 	text-transform: uppercase;
 }
 
+.tag_cloud {
+	font-style: italic;
+}

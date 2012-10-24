@@ -1,4 +1,4 @@
-<h1>Editing announcement</h1>
+<h1>Edit Announcement</h1>
 <%= form_for(@announcement, :url => admin_announcement_path(@announcement), :html => {:method => :put, :multipart => true}) do |f| %>
 	<%= render :partial => 'form', :locals => {:f => f} %>
 <% end %>
