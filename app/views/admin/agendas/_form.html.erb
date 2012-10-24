@@ -15,7 +15,7 @@
 <div class="control-group">
   <%= f.label :week, :class => "control-label" %>
   <div class="controls">
-	<%= f.text_field :week %>
+	<%= f.collection_select(:week_id, Week.all, :id, :title, :prompt => true) %>
   </div>
 </div>
 
