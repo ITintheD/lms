@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024121548) do
+ActiveRecord::Schema.define(:version => 20121024205449) do
 
   create_table "agendas", :force => true do |t|
     t.string   "title"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(:version => 20121024121548) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
+
+  create_table "read_marks", :force => true do |t|
+    t.integer  "readable_id"
+    t.integer  "user_id",                     :null => false
+    t.string   "readable_type", :limit => 20, :null => false
+    t.datetime "timestamp"
+  end
+
+  add_index "read_marks", ["user_id", "readable_type", "readable_id"], :name => "index_read_marks_on_user_id_and_readable_type_and_readable_id"
 
   create_table "resources", :force => true do |t|
     t.string   "title"

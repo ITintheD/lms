@@ -14,8 +14,10 @@ gem 'devise'
 # Feature Specific Gems
 gem "rmagick"
 gem 'carrierwave'
+gem 'jquery-fileupload-rails'
 gem 'state_machine'
 gem 'kaminari'
+gem 'unread'
 
 
 # Gems used only for assets and not required
@@ -26,8 +28,6 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-fileupload-rails'
-
 end
 
 gem 'jquery-rails'

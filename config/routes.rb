@@ -14,6 +14,8 @@ MiniLms::Application.routes.draw do
     end
   
   resources :questions, :agendas, :resources
+  match "/resources/read/:id" => "resources#read"
+  
   resources :announcements, :only => [:show, :index]
   resources :instructors, :only => [:show, :index]
   resources :users, :only => [:show, :index]

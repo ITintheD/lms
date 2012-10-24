@@ -9,7 +9,6 @@ class Instructor < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, :firstname, :lastname, :description
   # attr_accessible :title, :body
   mount_uploader :photo, PhotoUploader
-
   
   has_many :agendas
   has_many :announcements

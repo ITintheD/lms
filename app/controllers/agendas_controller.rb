@@ -2,8 +2,8 @@ class AgendasController < ApplicationController
   # GET /agendas
   # GET /agendas.json
   def index
-    @agendas = Agenda.order('created_at DESC')
     @featured = Agenda.current_featured
+    @agendas = Agenda.where('id <> ?', @featured.id).order('created_at DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @agendas }
@@ -14,6 +14,7 @@ class AgendasController < ApplicationController
   # GET /agendas/1.json
   def show
     @agenda = Agenda.find(params[:id])
+    @agenda.mark_as_read! :for => current_user if current_user
 
     respond_to do |format|
       format.html # show.html.erb

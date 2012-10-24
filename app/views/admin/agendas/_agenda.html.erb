@@ -1,7 +1,12 @@
 <div class="<%= class_name %>">
-  <p class="title"><%= link_to agenda.title, agenda_path(agenda) %></p>
+  <p class="title"><%= agenda.title %></p>
   <div class="body-text"><%= raw agenda.body %></div>
-  <p class="instructor-info">Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
+  <div class="instructor-info">
+    <p>Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
+    <% if agenda.featured %>
+      <p>Featured</p>
+    <% end %>
+  </div>
   <div>
     <span><%= link_to "Edit", edit_admin_agenda_path(agenda) %></span>
     <span><%= link_to "Destroy", admin_agenda_path(agenda), :method => :delete  %></span>

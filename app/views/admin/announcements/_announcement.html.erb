@@ -1,7 +1,12 @@
 <div class="<%= class_name %>">
-  <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
+  <p class="title"><%= announcement.title %></p>
   <div class="body-text"><%= raw announcement.body %></div>
-  <p class="instructor-info">Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
+  <div class="instructor-info">
+    <p>Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
+    <% if announcement.featured %>
+      <p>Featured</p>
+    <% end %>
+  </div>
   <% unless announcement.doc.blank? %>
     <div class="attachment">
       <span>Attachment: <%= File.basename(announcement.doc.path) %></span>

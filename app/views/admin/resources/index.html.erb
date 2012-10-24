@@ -1,35 +1,7 @@
-<h1>Listing resources</h1>
+<h1>Resources</h1>
+<br/>
+<p><%= link_to 'New Resource', new_resource_path, :class => "btn" %></p><br/>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Resourceable</th>
-    <th>Resourceable type</th>
-    <th>Link</th>
-    <th>Featured</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @resources.each do |resource| %>
-  <tr>
-    <td><%= resource.title %></td>
-    <td><%= resource.description %></td>
-    <td><%= resource.resourceable_id %></td>
-    <td><%= resource.resourceable_type %></td>
-    <td><%= resource.link %></td>
-    <td><%= resource.featured %></td>
-    <td><%= resource.status %></td>
-    <td><%= link_to 'Show', resource %></td>
-    <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
-    <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Resource', new_resource_path %>
+<div class="list-items">
+  <%= render :partial => "resource", :collection => @resources, :as => :resource, :locals => { :class_name => 'list-item' } %>
+</div>

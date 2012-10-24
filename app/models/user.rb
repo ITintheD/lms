@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, :firstname, :lastname, :description
   # attr_accessible :title, :body
   mount_uploader :photo, PhotoUploader
-
   
+  acts_as_reader
+
   has_many :resources, :as => :resourceable
   has_many :questions, :as => :questionable
 end

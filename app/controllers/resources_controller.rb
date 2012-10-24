@@ -41,7 +41,14 @@ class ResourcesController < ApplicationController
   # POST /resources.json
   def create
     @resource = Resource.new(params[:resource])
-
+    if current_user
+      @resource.resourceable_type = current_user.class.name
+      @resource.resourceable_id = current_user.id
+    else
+      @resource.resourceable_type = current_instructor.class.name
+      @resource.resourceable_id = current_instructor.id
+    end
+    
     respond_to do |format|
       if @resource.save
         format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
@@ -80,4 +87,11 @@ class ResourcesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def read
+    @resource = Resource.find(params[:id])    
+    @resource.mark_as_read! :for => current_user if current_user
+    render :nothing => true
+  end
+  
 end

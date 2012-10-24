@@ -30,3 +30,12 @@ $(function () {
       }
     });
  });
+
+function mark_resource_as_read(resource_id) {
+	$.ajax({
+	  type: 'GET',
+	  url: '/resources/read/' + resource_id
+	});	
+}
+
+
