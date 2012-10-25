@@ -2,6 +2,7 @@ module Admin
 	class AgendasController < AdminController
 	  # GET /agendas
 	  # GET /agendas.json
+	  	  
 	  def index
 		@agendas = Agenda.all
 
@@ -45,6 +46,7 @@ module Admin
 		@agenda.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @agenda.save
+		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if params[:mail][:flag]
 			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully created.' }
 			format.json { render json: @agenda, status: :created, location: @agenda }
 		  else
@@ -61,6 +63,7 @@ module Admin
 
 		respond_to do |format|
 		  if @agenda.update_attributes(params[:agenda])
+		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{raw(@agenda.body)}") if params[:mail][:flag]  
 			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
 			format.json { head :no_content }
 		  else
@@ -81,5 +84,11 @@ module Admin
 		  format.json { head :no_content }
 		end
 	  end
+	  
+	  protected
+	  
+	  def send_mail(email, subject, body)
+	    GroupMailer.custom_email(email, subject, body).deliver
+    end
 	end
 end

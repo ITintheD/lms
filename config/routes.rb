@@ -1,7 +1,5 @@
 MiniLms::Application.routes.draw do
 
-  resources :pages
-
   devise_for :instructors, :controllers => { :sessions => "instructors/sessions", :registrations => "instructors/registrations"  }
   	as :instructor do
   	  match "/instructors/registrations/create_photo/:id" => "instructors/registrations#create_photo", :as => :create_photo
@@ -20,12 +18,9 @@ MiniLms::Application.routes.draw do
   resources :instructors, :only => [:show, :index]
   resources :users, :only => [:show, :index]
   
-
   namespace :admin do
 	resources :resources, :questions, :agendas, :announcements, :students
   end
-
-  resources :pages, :except => :show
   
   get "/about" => "pages#about", :as => :about_page
 
@@ -33,8 +28,6 @@ MiniLms::Application.routes.draw do
 
   root :to => 'announcements#index'
   
-  get ':id', to: 'pages#show', :as => :page
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

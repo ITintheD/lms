@@ -1,11 +1,18 @@
 <ul class="nav nav-tabs nav-stacked bs-docs-sidenav affix span2">
-  <% if current_instructor || current_user %>
-    <li><%= link_to "Announcements", announcements_path %></li>
-    <li><%= link_to "Agendas", agendas_path %></li>
+  <% if current_user %>
+    <li><%= link_to "Announcements" + " (" + Announcement.unread_by(current_user).size.to_s + " unread)", announcements_path %></li>
+    <li><%= link_to "Agendas" + " (" + Agenda.unread_by(current_user).size.to_s + " unread)", agendas_path %></li>
     <!--<li><#%= link_to "Stand Ups (Coming Soon)", "#" %></li>-->
-    <li><%= link_to "Resources", resources_path %></li>
+    <li><%= link_to "Resources" + " (" + Resource.unread_by(current_user).size.to_s + " unread)", resources_path %></li>
     <li><%= link_to "Instructors", instructors_path %></li>
     <li><%= link_to "Students", users_path %></li>
+  <% elsif current_instructor %>
+  <li><%= link_to "Announcements", announcements_path %></li>
+  <li><%= link_to "Agendas", agendas_path %></li>
+  <!--<li><#%= link_to "Stand Ups (Coming Soon)", "#" %></li>-->
+  <li><%= link_to "Resources", resources_path %></li>
+  <li><%= link_to "Instructors", instructors_path %></li>
+  <li><%= link_to "Students", users_path %></li>  
   <% else %>
     <li><%= link_to "Instructors", instructors_path %></li>
   <% end %>

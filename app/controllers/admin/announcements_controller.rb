@@ -45,11 +45,12 @@ module Admin
 		@announcement.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @announcement.save
-			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully created.' }
-			format.json { render json: @announcement, status: :created, location: @announcement }
+  		  send_mail(APP_CONFIG["group_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
+  			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully created.' }
+  			format.json { render json: @announcement, status: :created, location: @announcement }
 		  else
-			format.html { render action: "new" }
-			format.json { render json: @announcement.errors, status: :unprocessable_entity }
+  			format.html { render action: "new" }
+  			format.json { render json: @announcement.errors, status: :unprocessable_entity }
 		  end
 		end
 	  end
@@ -61,11 +62,12 @@ module Admin
 
 		respond_to do |format|
 		  if @announcement.update_attributes(params[:announcement])
-			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully updated.' }
-			format.json { head :no_content }
+  		  send_mail(APP_CONFIG["group_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
+  			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully updated.' }
+  			format.json { head :no_content }
 		  else
-			format.html { render action: "edit" }
-			format.json { render json: @announcement.errors, status: :unprocessable_entity }
+  			format.html { render action: "edit" }
+  			format.json { render json: @announcement.errors, status: :unprocessable_entity }
 		  end
 		end
 	  end
@@ -81,5 +83,12 @@ module Admin
 		  format.json { head :no_content }
 		end
 	  end
+	  
+	  protected
+	  
+	  def send_mail(email, subject, body)
+	    GroupMailer.custom_email(email, subject, body).deliver
+    end
+    
 	end
 end
