@@ -3,7 +3,7 @@ class ResourcesController < ApplicationController
   # GET /resources.json
   def index
     @resources = Resource.all
-
+    @featured_resources = Resource.where(:featured => true).all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }

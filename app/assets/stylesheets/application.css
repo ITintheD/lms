@@ -23,6 +23,15 @@
 	
 }
 
+.suggested-resource-item {
+	padding: 20px;
+	margin-bottom: 10px;
+	background-color: #F8F8F8;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;	
+}
+
 
 .hero-unit-featured {
 	padding: 15px;
@@ -41,17 +50,17 @@
 	padding: 60px;
 }
 
-.list-item .title, .hero-unit-featured .title {
+.list-item .title, .hero-unit-featured .title, .suggested-resource-item .title {
 	font-weight: bold;
 	font-size: 24px;
 }
 
-.list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text  {
+.list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text, .suggested-resource-item .body-text  {
 	font-size: 18px;
 	line-height: 1.5;
 }
 
-.list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info, .profile-item .email-info {
+.list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info, .profile-item .email-info,  .suggested-resource-item .email-info {
 	font-size: 14px;
 	font-style: italic;
 	

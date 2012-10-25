@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Core App Gems
 gem 'rails', '3.2.8'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'mysql2'
 
 # Authentication Gems
@@ -15,8 +13,6 @@ gem 'devise'
 gem "rmagick"
 gem 'carrierwave'
 gem 'jquery-fileupload-rails'
-gem 'state_machine'
-gem 'kaminari'
 gem 'unread'
 
 

@@ -8,6 +8,12 @@
       <span><%= link_to "Download", resource.doc_url, :class => "btn"  %></span>
     </div>
   <% end %>
+  <% if resource.featured %>
+    <p>Suggested</p>
+  <% end %>
   <p class="instructor-info">Created at <%= time_ago_in_words(resource.created_at) %> ago</p>
-  <p><%= link_to "Destroy", admin_resource_path(resource), :method => :delete  %></p>
+  <p>
+    <span><%= link_to "Edit", edit_admin_resource_path(resource)  %></span>
+    <span><%= link_to "Destroy", admin_resource_path(resource), :method => :delete  %></span>
+  </p>
 </div>

@@ -45,7 +45,7 @@ module Admin
 
 		respond_to do |format|
 		  if @resource.save
-			format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
+			format.html { redirect_to admin_resources_path, notice: 'Resource was successfully created.' }
 			format.json { render json: @resource, status: :created, location: @resource }
 		  else
 			format.html { render action: "new" }
@@ -61,7 +61,7 @@ module Admin
 
 		respond_to do |format|
 		  if @resource.update_attributes(params[:resource])
-			format.html { redirect_to @resource, notice: 'Resource was successfully updated.' }
+			format.html { redirect_to admin_resources_path, notice: 'Resource was successfully updated.' }
 			format.json { head :no_content }
 		  else
 			format.html { render action: "edit" }
