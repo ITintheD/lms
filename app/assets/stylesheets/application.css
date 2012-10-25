@@ -114,3 +114,8 @@
 .tag_cloud {
 	font-style: italic;
 }
+
+.attachment {
+	font-size: 14px;
+	font-weight: bold;
+}

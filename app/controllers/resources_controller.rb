@@ -2,8 +2,8 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @resources = Resource.all
-    @featured_resources = Resource.where(:featured => true).all
+    @resources = Resource.order("created_at DESC")
+    @featured_resources = Resource.where(:featured => true).order("created_at DESC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }

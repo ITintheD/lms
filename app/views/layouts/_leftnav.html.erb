@@ -4,6 +4,7 @@
     <li><%= link_to "Agendas" + " (" + Agenda.unread_by(current_user).size.to_s + " unread)", agendas_path %></li>
     <!--<li><#%= link_to "Stand Ups (Coming Soon)", "#" %></li>-->
     <li><%= link_to "Resources" + " (" + Resource.unread_by(current_user).size.to_s + " unread)", resources_path %></li>
+    <li><%= link_to "Discussion", "https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012" %>
     <li><%= link_to "Instructors", instructors_path %></li>
     <li><%= link_to "Students", users_path %></li>
   <% elsif current_instructor %>
@@ -11,6 +12,7 @@
   <li><%= link_to "Agendas", agendas_path %></li>
   <!--<li><#%= link_to "Stand Ups (Coming Soon)", "#" %></li>-->
   <li><%= link_to "Resources", resources_path %></li>
+  <li><%= link_to "Discussion", "https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012" %>
   <li><%= link_to "Instructors", instructors_path %></li>
   <li><%= link_to "Students", users_path %></li>  
   <% else %>

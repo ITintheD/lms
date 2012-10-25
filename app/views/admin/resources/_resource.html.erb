@@ -4,9 +4,9 @@
   <p class="link"><%= link_to resource.link, resource.link unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(resource.doc.path) %></span>
-      <span><%= link_to "Download", resource.doc_url, :class => "btn"  %></span>
+      <span>View File: <%= link_to File.basename(resource.doc.path), resource.doc_url, :target => "_blank"  %></span>
     </div>
+    <br/>
   <% end %>
   <% if resource.featured %>
     <p>Suggested</p>

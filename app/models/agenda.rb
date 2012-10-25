@@ -6,7 +6,7 @@ class Agenda < ActiveRecord::Base
   belongs_to :instructor
   belongs_to :week
   
-  validates_presence_of :week_id
+  validates_presence_of :week_id, :title, :body
   
   def self.current_featured
     Agenda.where(:featured => true).order('created_at').first

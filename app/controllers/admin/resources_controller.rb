@@ -3,8 +3,8 @@ module Admin
 	  # GET /resources
 	  # GET /resources.json
 	  def index
-		@resources = Resource.all
-
+		@resources = Resource.order("created_at DESC")
+		
 		respond_to do |format|
 		  format.html # index.html.erb
 		  format.json { render json: @resources }

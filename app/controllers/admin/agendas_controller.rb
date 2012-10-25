@@ -4,7 +4,7 @@ module Admin
 	  # GET /agendas.json
 	  	  
 	  def index
-		@agendas = Agenda.all
+		@agendas = Agenda.order("created_at DESC")
 
 		respond_to do |format|
 		  format.html # index.html.erb
