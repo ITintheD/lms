@@ -4,8 +4,7 @@
   <p class="instructor-info">Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
   <% unless announcement.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(announcement.doc.path) %></span>
-      <span><%= link_to "Download", announcement.doc_url, :class => "btn", :target => "_blank"  %></span>
+      <span>File: <%= link_to File.basename(announcement.doc.path), announcement.doc_url, :target => "_blank" %></span>
     </div>
   <% end %>
 </div>

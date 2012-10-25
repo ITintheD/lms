@@ -1,11 +1,10 @@
 <div class="<%= class_name %>">
   <p class="title"><%= resource.title %></p>
   <p class="body-text"><%= resource.description %></p>
-  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}'); return false;" unless resource.link.blank? %></p>
+  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}');" unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(resource.doc.path) %></span>
-      <span><%= link_to "Download", resource.doc_url, :class => "btn", :onclick => "mark_resource_as_read('#{resource.id}'); return false;", :target => "_blank" %></span>
+      <span>Attachment: <%= link_to File.basename(resource.doc.path), resource.doc_url, :onclick => "mark_resource_as_read('#{resource.id}');", :target => "_blank" %></span>
     </div>
   <% end %>
   <p class="instructor-info">Created at <%= time_ago_in_words(resource.created_at) %> ago</p>
