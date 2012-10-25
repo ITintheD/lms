@@ -3,7 +3,12 @@ class AgendasController < ApplicationController
   # GET /agendas.json
   def index
     @featured = Agenda.current_featured
-    @agendas = Agenda.where('id <> ?', @featured.id).order('created_at DESC')
+    if @featured
+      @agendas = Agenda.where('id <> ?', @featured.id).order('created_at DESC')
+    else
+      @agendas = Agenda.order('created_at DESC')
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @agendas }

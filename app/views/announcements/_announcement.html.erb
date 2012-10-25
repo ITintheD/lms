@@ -5,7 +5,7 @@
   <% unless announcement.doc.blank? %>
     <div class="attachment">
       <span>Attachment: <%= File.basename(announcement.doc.path) %></span>
-      <span><%= link_to "Download", announcement.doc_url, :class => "btn"  %></span>
+      <span><%= link_to "Download", announcement.doc_url, :class => "btn", :target => "_blank"  %></span>
     </div>
   <% end %>
 </div>

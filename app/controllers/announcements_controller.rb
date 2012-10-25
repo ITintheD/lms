@@ -3,7 +3,12 @@ class AnnouncementsController < ApplicationController
   # GET /announcements.json
   def index
     @featured = Announcement.current_featured
-    @announcements = Announcement.where('id <> ?', @featured.id).order('created_at DESC')
+    if @featured
+      @announcements = Announcement.where('id <> ?', @featured.id).order('created_at DESC')
+    else
+      @announcements = Announcement.order('created_at DESC')
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @announcements }

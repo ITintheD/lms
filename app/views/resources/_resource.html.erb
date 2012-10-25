@@ -1,7 +1,7 @@
 <div class="<%= class_name %>">
   <p class="title"><%= resource.title %></p>
   <p class="body-text"><%= resource.description %></p>
-  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}'); return false;", :target => "_blank" unless resource.link.blank? %></p>
+  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}'); return false;" unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
       <span>Attachment: <%= File.basename(resource.doc.path) %></span>

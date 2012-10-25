@@ -14,6 +14,8 @@ gem "rmagick"
 gem 'carrierwave'
 gem 'jquery-fileupload-rails'
 gem 'unread'
+gem 'seed-fu'
+
 
 
 # Gems used only for assets and not required

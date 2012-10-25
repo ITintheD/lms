@@ -59,17 +59,6 @@ ActiveRecord::Schema.define(:version => 20121024205449) do
   add_index "instructors", ["email"], :name => "index_instructors_on_email", :unique => true
   add_index "instructors", ["reset_password_token"], :name => "index_instructors_on_reset_password_token", :unique => true
 
-  create_table "questions", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "questionable_id"
-    t.string   "questionable_type"
-    t.boolean  "featured"
-    t.string   "status"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
   create_table "read_marks", :force => true do |t|
     t.integer  "readable_id"
     t.integer  "user_id",                     :null => false
