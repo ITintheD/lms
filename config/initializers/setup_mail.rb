@@ -1,9 +1,8 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
+  :address              => "email-smtp.us-east-1.amazonaws.com",
   :port                 => 587,
-  :domain               => "xxxxxx",
-  :user_name            => "xxxxxx",
-  :password             => "xxxxxx",
+  :user_name            => "AKIAJQSDOBW6TQFDRBGQ",
+  :password             => "Asot46+dr5LhkJpDnbf6epkO0OQjHSop9kFVKyWO+aww",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }

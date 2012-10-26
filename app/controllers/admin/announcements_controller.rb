@@ -45,7 +45,7 @@ module Admin
 		@announcement.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @announcement.save
-  		  send_mail(APP_CONFIG["group_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
+  		  send_mail(APP_CONFIG["test_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
   			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully created.' }
   			format.json { render json: @announcement, status: :created, location: @announcement }
 		  else
@@ -62,7 +62,7 @@ module Admin
 
 		respond_to do |format|
 		  if @announcement.update_attributes(params[:announcement])
-  		  send_mail(APP_CONFIG["group_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
+  		  send_mail(APP_CONFIG["test_email"], "Announcement: #{@announcement.title}", "#{@announcement.body}") if params[:mail][:flag] 
   			format.html { redirect_to admin_announcements_path, notice: 'Announcement was successfully updated.' }
   			format.json { head :no_content }
 		  else
