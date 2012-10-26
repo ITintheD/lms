@@ -1,7 +1,7 @@
 <% if week.announcements.exists? %>
   <div> Announcements: 
     <% week.announcements.each do |announcement| %>
-      <span><%= link_to announcement.title, announcement_path(announcement) %></span>
+      <span><%= link_to announcement.title, announcement_path(announcement), :class => "tag#{rand(5)}" %></span>
     <% end %>
   </div>
 <% end %>
@@ -9,7 +9,7 @@
 <% if week.resources.exists? %>
   <div> Resources:
     <% week.resources.each do |resource| %>
-      <span><%= link_to resource.title, resource_path(resource) %></span>
+      <span><%= link_to resource.title, resource_path(resource), :class => "tag#{rand(5)}" %></span>
     <% end %>
   </div>
 <% end %>
