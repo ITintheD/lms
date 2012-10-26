@@ -1,5 +1,10 @@
 <div class="<%= class_name %>">
+  
+  <% if current_user && resource.unread?(current_user) && ((!resource.doc_url.blank?) || (!resource.link.blank?)) %>
+  <p class="title"><%= resource.title + " (unread)" %></p>
+  <% else %>
   <p class="title"><%= resource.title %></p>
+  <% end %>
   <p class="body-text"><%= resource.description %></p>
   <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}');" unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>

@@ -1,5 +1,10 @@
 <div class="<%= class_name %>">
-  <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
+  <% if current_user && announcement.unread?(current_user)%>
+    <p class="title"><%= link_to announcement.title + " (unread)", announcement_path(announcement) %></p>
+  <% else %>
+    <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
+  <% end %>
+    
   <div class="body-text"><%= raw truncate(announcement.body, :length => 300, :omission => '...') %></div>
   <% unless announcement.doc.blank? %>
     <div class="attachment">
