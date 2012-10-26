@@ -46,7 +46,7 @@
 }
 
 
-.hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a {
+.hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a {
 	color: white;
 }
 
