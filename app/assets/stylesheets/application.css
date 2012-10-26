@@ -168,3 +168,9 @@
 	font-weight: bold;
 	font-style: italic;
 }
+
+.action_links {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-left: 20px;
+}
