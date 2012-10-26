@@ -52,10 +52,13 @@
 
 .tag_cloud a.tag1 { font-size: 1.0em; font-weight: 400; }
 .tag_cloud a.tag2 { font-size: 1.2em; font-weight: 500; }
-.tag_cloud a.tag3 { font-size: 1.5em; font-weight: 600; }
-.tag_cloud a.tag4 { font-size: 1.7em; font-weight: 700; }
+.tag_cloud a.tag3 { font-size: 1.6em; font-weight: 600; }
+.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 700; }
 .tag_cloud a.tag5 { font-size: 2.0em; font-weight: 800; }
 
+.tag_cloud {
+	padding-left: 20px;
+}
 
 .suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a {
 	color: white;
