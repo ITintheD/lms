@@ -10,7 +10,7 @@ class Announcement < ActiveRecord::Base
   validates_presence_of :title, :body
   
   def self.current_featured
-    Announcement.where(:featured => true).order('created_at').first
+    Announcement.where(:featured => true).order('created_at DESC').first
   end
   
 end
