@@ -63,7 +63,7 @@ module Admin
 
 		respond_to do |format|
 		  if @agenda.update_attributes(params[:agenda])
-		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{raw(@agenda.body)}") if params[:mail][:flag]  
+		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if params[:mail][:flag]  
 			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
 			format.json { head :no_content }
 		  else

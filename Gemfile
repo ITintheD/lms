@@ -15,7 +15,7 @@ gem 'carrierwave'
 gem 'jquery-fileupload-rails'
 gem 'unread'
 gem 'seed-fu'
-
+gem 'mime-types'
 
 
 # Gems used only for assets and not required
