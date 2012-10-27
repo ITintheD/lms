@@ -4,16 +4,16 @@
   <p class="link"><%= link_to resource.link, resource.link unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(resource.doc.path) %></span>
-      <span><%= link_to "Download", resource.doc_url, :class => "btn"  %></span>
+      <span>View File: <%= link_to File.basename(resource.doc.path), resource.doc_url, :target => "_blank"  %></span>
     </div>
+    <br/>
   <% end %>
   <% if resource.featured %>
     <p>Suggested</p>
   <% end %>
-  <p class="instructor-info">Created at <%= time_ago_in_words(resource.created_at) %> ago</p>
-  <p>
+  <p class="instructor-info">Created <%= time_ago_in_words(resource.created_at) %> ago</p>
+  <div class = "action_links">
     <span><%= link_to "Edit", edit_admin_resource_path(resource)  %></span>
     <span><%= link_to "Destroy", admin_resource_path(resource), :method => :delete  %></span>
-  </p>
+  </div>
 </div>

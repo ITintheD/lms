@@ -31,9 +31,16 @@
 </div>
 
 <div class="control-group">
+	<%= f.label "Upload document", :class => "control-label" %>
+	<div class="controls">
+		<%= f.file_field :doc %>
+	</div>
+</div>
+
+<div class="control-group">
   <div class="controls">
 	<label class="checkbox">
-	  <%= f.check_box :featured %>Featured
+	  <%= f.check_box :featured %>Feature
 	</label>
   </div>
 </div>
@@ -46,12 +53,7 @@
   </div>
 </div>
 
-<div class="control-group">
-	<%= f.label "Upload document", :class => "control-label" %>
-	<div class="controls">
-		<%= f.file_field :doc %>
-	</div>
-</div>
+
 
 <div class="actions control-group">
   <div class="controls">

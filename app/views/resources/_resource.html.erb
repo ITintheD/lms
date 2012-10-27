@@ -1,12 +1,17 @@
 <div class="<%= class_name %>">
+  
+  <% if current_user && resource.unread?(current_user) && ((!resource.doc_url.blank?) || (!resource.link.blank?)) %>
+  <p class="title"><%= resource.title + " (unread)" %></p>
+  <% else %>
   <p class="title"><%= resource.title %></p>
+  <% end %>
   <p class="body-text"><%= resource.description %></p>
-  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}');", :target => "_blank" unless resource.link.blank? %></p>
+  <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}');" unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(resource.doc.path) %></span>
-      <span><%= link_to "Download", resource.doc_url, :class => "btn", :onclick => "mark_resource_as_read('#{resource.id}');", :target => "_blank" %></span>
+      <span>View File: <%= link_to File.basename(resource.doc.path), resource.doc_url, :target => "_blank"  %></span>
     </div>
+    <br/>
   <% end %>
-  <p class="instructor-info">Created at <%= time_ago_in_words(resource.created_at) %> ago</p>
+  <p class="instructor-info">Created <%= time_ago_in_words(resource.created_at) %> ago</p>
 </div>

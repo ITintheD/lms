@@ -4,6 +4,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
+  include Sprockets::Helpers::RailsHelper
+  include Sprockets::Helpers::IsolatedHelper
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -18,6 +20,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process :resize_to_fill => [100,100]
+  end
+  
+  def default_url
+    asset_path("missing_avatar.png")
   end
 
   

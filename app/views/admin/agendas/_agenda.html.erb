@@ -1,13 +1,18 @@
 <div class="<%= class_name %>">
   <p class="title"><%= agenda.title %></p>
   <div class="body-text"><%= raw agenda.body %></div>
+  <% unless agenda.doc.blank? %>
+    <div class="attachment">
+      <span>View File: <%= link_to File.basename(agenda.doc.path), agenda.doc_url, :target => "_blank"  %></span>
+    </div>
+  <% end %>
   <div class="instructor-info">
     <p>Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
     <% if agenda.featured %>
       <p>Featured</p>
     <% end %>
   </div>
-  <div>
+  <div class = "action_links">
     <span><%= link_to "Edit", edit_admin_agenda_path(agenda) %></span>
     <span><%= link_to "Destroy", admin_agenda_path(agenda), :method => :delete  %></span>
   </div>

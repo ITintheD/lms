@@ -4,7 +4,7 @@ module Admin
 	  # GET /agendas.json
 	  	  
 	  def index
-		@agendas = Agenda.all
+		@agendas = Agenda.order("created_at DESC")
 
 		respond_to do |format|
 		  format.html # index.html.erb
@@ -46,7 +46,7 @@ module Admin
 		@agenda.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @agenda.save
-		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if params[:mail][:flag]
+		  send_mail(APP_CONFIG["test_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if (params[:mail][:flag] == "1")
 			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully created.' }
 			format.json { render json: @agenda, status: :created, location: @agenda }
 		  else
@@ -63,7 +63,7 @@ module Admin
 
 		respond_to do |format|
 		  if @agenda.update_attributes(params[:agenda])
-		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if params[:mail][:flag]  
+		  send_mail(APP_CONFIG["test_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if (params[:mail][:flag] == "1") 
 			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
 			format.json { head :no_content }
 		  else

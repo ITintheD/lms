@@ -1,5 +1,5 @@
 class GroupMailer < ActionMailer::Base
-  default :from => "admin@glocal.com"
+  default :from => "andrea.r.jenkins@gmail.com"
   
   #custom email
   def custom_email(email, subject, body)

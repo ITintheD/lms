@@ -1,13 +1,20 @@
 <div class="<%= class_name %>">
-  <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
+  <% if current_user && announcement.unread?(current_user)%>
+    <p class="title"><%= link_to announcement.title + " (unread)", announcement_path(announcement) %></p>
+  <% else %>
+    <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
+  <% end %>
+    
   <div class="body-text"><%= raw truncate(announcement.body, :length => 300, :omission => '...') %></div>
-  <p class="instructor-info">Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
   <% unless announcement.doc.blank? %>
     <div class="attachment">
-      <span>Attachment: <%= File.basename(announcement.doc.path) %></span>
-      <span><%= link_to "Download", announcement.doc_url, :class => "btn", :target => "_blank"  %></span>
+      <span>View File: <%= link_to File.basename(announcement.doc.path), announcement.doc_url, :target => "_blank"  %></span>
     </div>
   <% end %>
+  <br/>
+  <div class="instructor-info">
+    <p>Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
+  </div>
 </div>
 
 

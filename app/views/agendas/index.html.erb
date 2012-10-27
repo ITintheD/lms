@@ -1,8 +1,8 @@
-<h1>Agendas</h1>
+<h1>Sessions</h1>
 
 <% unless @featured.blank? %>
 	<div class ="hero-unit-featured">
-	  <h3>Current Agenda</h3>
+	  <h3>Current Session</h3>
 	  <%= render :partial => "agenda", :locals => { :agenda => @featured, :class_name => 'featured-item' } %>
 	</div>
 <% end %>

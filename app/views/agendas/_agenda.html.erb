@@ -1,6 +1,15 @@
 <div class="<%= class_name %>">
-  <p class="title"><%= link_to agenda.week.title + ": " + agenda.title, agenda_path(agenda) %></p>
+  <% if current_user && agenda.unread?(current_user)%>
+    <p class="title"><%= link_to agenda.week.title + ": " + agenda.title + " (unread)", agenda_path(agenda) %></p>
+  <% else %>
+    <p class="title"><%= link_to agenda.week.title + ": " + agenda.title, agenda_path(agenda) %></p>
+  <% end %>
   <div class="body-text"><%= raw truncate(agenda.body, :length => 300, :omission => '...') %></div>
+  <% unless agenda.doc.blank? %>
+    <div class="attachment">
+      <span>View File: <%= link_to File.basename(agenda.doc.path), agenda.doc_url, :target => "_blank"  %></span>
+    </div>
+  <% end %>
   <div class="tag_cloud">
     <%= render :partial => "tag_cloud", :locals => { :week => agenda.week } %>
   </div>

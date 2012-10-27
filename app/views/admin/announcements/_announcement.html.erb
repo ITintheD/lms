@@ -1,20 +1,21 @@
 <div class="<%= class_name %>">
   <p class="title"><%= announcement.title %></p>
   <div class="body-text"><%= raw announcement.body %></div>
+  <% unless announcement.doc.blank? %>
+    <div class="attachment">
+      <span>View File: <%= link_to File.basename(announcement.doc.path), announcement.doc_url, :target => "_blank"  %></span>
+    </div>
+  <% end %>
+  <br/>
   <div class="instructor-info">
     <p>Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
     <% if announcement.featured %>
       <p>Featured</p>
     <% end %>
   </div>
-  <% unless announcement.doc.blank? %>
-    <div class="attachment">
-      <span>Attachment: <%= File.basename(announcement.doc.path) %></span>
-      <span><%= link_to "Download", announcement.doc_url, :class => "btn"  %></span>
-    </div>
-  <% end %>
+
   
-  <div>
+  <div class = "action_links">
     <span><%= link_to "Edit", edit_admin_announcement_path(announcement) %></span>
     <span><%= link_to "Destroy", admin_announcement_path(announcement), :method => :delete  %></span>   
   </div>

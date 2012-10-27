@@ -12,10 +12,11 @@
  *= require_tree .
  */
 
+
 .list-item {
 	padding: 20px;
 	margin-bottom: 10px;
-	background-color: #ECF7FD;
+	background-color: #C6E3F3; /*#ECF7FD;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
@@ -26,7 +27,7 @@
 .suggested-resource-item {
 	padding: 20px;
 	margin-bottom: 10px;
-	background-color: #F8F8F8;
+	background-color: #2F78C0; /*#F8F8F8;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;	
@@ -37,11 +38,37 @@
 	padding: 15px;
 	margin-bottom: 10px;
 	height-min: 120px;
-	background-color: #F8F8F8;
+	background-color: #2F78C0; /*#F8F8F8;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
+	color: white;
 }
+
+
+.hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a {
+	color: white;
+}
+
+.tag_cloud a.tag1 { font-size: 1.0em; font-weight: 400; }
+.tag_cloud a.tag2 { font-size: 1.2em; font-weight: 500; }
+.tag_cloud a.tag3 { font-size: 1.6em; font-weight: 600; }
+.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 700; }
+.tag_cloud a.tag5 { font-size: 2.0em; font-weight: 800; }
+
+.tag_cloud {
+	padding-left: 20px;
+}
+
+.suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a {
+	color: white;
+}
+
+
+.featured-item .title a {
+	font-size: 30px;
+}
+
 
 .leftnavpane {
 	background-color: #F8F8F8;
@@ -58,18 +85,49 @@
 .list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text, .suggested-resource-item .body-text  {
 	font-size: 18px;
 	line-height: 1.5;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
 .list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info, .profile-item .email-info,  .suggested-resource-item .email-info {
 	font-size: 14px;
 	font-style: italic;
+	border-top: 1px grey dashed;
+	padding-top: 10px;
 	
+}
+
+.featured-item .instructor-info, .suggested-resource-item .instructor-info {
+	border-top: 1px white dashed;
+	padding-top: 10px;
+	font-style: italic;
+	
+	
+}
+
+
+
+.nav-tabs li {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.main_content {
+	padding-top: 90px;
+}
+
+.main_content h1 {
+	font-size: 45px;
+	text-transform: uppercase;
+	padding-bottom: 40px;
+	color: #194775;
 }
 
 .item {
 	padding: 20px;
 	margin-bottom: 10px;
-	background-color: #ECF7FD;
+	background-color: #C6E3F3; /*#ECF7FD;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
@@ -77,7 +135,7 @@
 
 .profile-item {
 	margin-bottom: 10px;
-	background-color: #ECF7FD;
+	background-color: #C6E3F3; /*#ECF7FD;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
@@ -113,4 +171,17 @@
 
 .tag_cloud {
 	font-style: italic;
+}
+
+.attachment {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	padding-bottom: 10px;
+}
+
+.action_links {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-left: 20px;
 }
