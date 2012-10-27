@@ -8,6 +8,10 @@ gem 'mysql2'
 # Authentication Gems
 gem 'devise'
 
+gem 'execjs'
+
+gem 'therubyracer'
+
 
 # Feature Specific Gems
 gem "rmagick"
