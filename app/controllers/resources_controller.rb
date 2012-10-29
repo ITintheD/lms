@@ -2,9 +2,9 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @featured_resources = Resource.where(:featured => true).order("created_at DESC")   
+    @featured_resources = Resource.where(:featured => true).order("created_at DESC")  
     unless @featured_resources.blank?  
-    	@resources = Resource.where('id <> ?', @featured_resources.collect(&:id)).page(params[:page]).per_page(5).order("created_at DESC")  
+    	@resources = Resource.where('id not IN (?)', @featured_resources.collect(&:id)).page(params[:page]).per_page(5).order("created_at DESC")  
     else
     	@resources = Resource.page(params[:page]).per_page(5).order("created_at DESC")
     end
