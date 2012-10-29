@@ -1,0 +1,6 @@
+$('#announcements').append('<%= escape_javascript(render :partial => "announcement", :collection => @announcements, :as => :announcement, :locals => { :class_name => "list-item" } ) %>');
+<% if @announcements.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript(will_paginate(@announcements)) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

@@ -4,6 +4,8 @@
   <%= render :partial => "resource", :collection => @featured_resources, :as => :resource, :locals => { :class_name => 'suggested-resource-item' } %>
 <% end %>
 
-<div class="list-items">
+<div class="list-items" id ="resources">
   <%= render :partial => "resource", :collection => @resources, :as => :resource, :locals => { :class_name => 'list-item' } %>
 </div>
+
+<%= will_paginate @resources %>

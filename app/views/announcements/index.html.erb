@@ -6,9 +6,12 @@
 
 <br/>
 
-<div class="list-items">
+<div class="list-items" id="announcements">
   <%= render :partial => "announcement", :collection => @announcements, :as => :announcement, :locals => { :class_name => 'list-item' } %>
 </div>
 
 <br />
+
+<%= will_paginate @announcements %>
+
 

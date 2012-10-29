@@ -4,9 +4,9 @@ class AgendasController < ApplicationController
   def index
     @featured = Agenda.current_featured
     if @featured
-      @agendas = Agenda.where('id <> ?', @featured.id).page(params[:page]).per_page(4).order('created_at DESC')
+      @agendas = Agenda.where('id <> ?', @featured.id).page(params[:page]).per_page(5).order('created_at DESC')
     else
-      @agendas = Agenda.page(params[:page]).per_page(4).order('created_at DESC')
+      @agendas = Agenda.page(params[:page]).per_page(5).order('created_at DESC')
     end
   end
 

@@ -1,0 +1,6 @@
+$('#resources').append('<%= escape_javascript(render :partial => "resource", :collection => @resources, :as => :resource, :locals => { :class_name => "list-item" } ) %>');
+<% if @resources.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript(will_paginate(@resources)) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
