@@ -1,5 +1,5 @@
 <div class="item">
-  <% image_tag(@instructor.photo_url) unless @instructor.photo_url.blank? %>
+  <% image_tag(@instructor.photo_url)  %>
   
   <% unless @instructor.firstname.blank? %>
     <h2><%= @instructor.firstname.humanize %> <%= @instructor.lastname.humanize %></h2>

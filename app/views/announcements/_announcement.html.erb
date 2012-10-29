@@ -8,12 +8,12 @@
   <div class="body-text"><%= raw truncate(announcement.body, :length => 300, :omission => '...') %></div>
   <% unless announcement.doc.blank? %>
     <div class="attachment">
-      <span>View File: <%= link_to File.basename(announcement.doc.path), announcement.doc_url, :target => "_blank"  %></span>
+      <span>View File: <%= link_to File.basename(announcement.doc.path), announcement.doc_url, :target => "_blank", :class=>"btn", :style=>"color: black;"  %></span>
     </div>
   <% end %>
   <br/>
   <div class="instructor-info">
-    <p>Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
+    <p><%= image_tag(announcement.instructor.photo_url, :width => 30) %> Created by <%= announcement.instructor.email unless announcement.instructor.blank? %>, <%= time_ago_in_words(announcement.created_at) %> ago</p>
   </div>
 </div>
 

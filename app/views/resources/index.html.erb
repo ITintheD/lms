@@ -1,10 +1,6 @@
-<h1>Resources</h1>
-<br />
-
 <p><%= link_to 'New Resource', new_resource_path, :class=>"btn" %></p><br/>
 
 <% unless @featured_resources.blank? %>
-  <h3><%= pluralize(@featured_resources.size, "Suggested Resource") %></h3>
   <%= render :partial => "resource", :collection => @featured_resources, :as => :resource, :locals => { :class_name => 'suggested-resource-item' } %>
 <% end %>
 

@@ -50,15 +50,12 @@
 	color: white;
 }
 
-.tag_cloud a.tag1 { font-size: 1.0em; font-weight: 400; }
-.tag_cloud a.tag2 { font-size: 1.2em; font-weight: 500; }
-.tag_cloud a.tag3 { font-size: 1.6em; font-weight: 600; }
-.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 700; }
-.tag_cloud a.tag5 { font-size: 2.0em; font-weight: 800; }
+.tag_cloud a.tag1 { font-size: 1.5em; font-weight: 600; }
+.tag_cloud a.tag2 { font-size: 1.6em; font-weight: 700; }
+.tag_cloud a.tag3 { font-size: 1.7em; font-weight: 800; }
+.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 900; }
 
-.tag_cloud {
-	padding-left: 20px;
-}
+
 
 .suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a {
 	color: white;
@@ -66,7 +63,7 @@
 
 
 .featured-item .title a {
-	font-size: 30px;
+	font-size: 24px;
 }
 
 
@@ -83,10 +80,13 @@
 }
 
 .list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text, .suggested-resource-item .body-text  {
-	font-size: 18px;
-	line-height: 1.5;
+	font-size: 14px;
 	margin-top: 25px;
 	margin-bottom: 25px;
+}
+
+.body-text {
+	text-indent: 20px;
 }
 
 .list-item .instructor-info, .item .instructor-info, .hero-unit-featured .instructor-info, .profile-item .email-info,  .suggested-resource-item .email-info {
@@ -107,6 +107,7 @@
 
 
 
+
 .nav-tabs li {
 	font-size: 16px;
 	font-weight: bold;
@@ -117,10 +118,8 @@
 	padding-top: 90px;
 }
 
-.main_content h1 {
-	font-size: 45px;
-	text-transform: uppercase;
-	padding-bottom: 40px;
+.main_content h2 {
+	padding-bottom: 20px;
 	color: #194775;
 }
 
@@ -157,7 +156,6 @@
 
 .item .body-text p {
 	font-size: 16px;
-	line-height: 1.5;
 }
 
 
@@ -173,9 +171,12 @@
 	font-style: italic;
 }
 
+.tag_cloud div {
+	margin-top: 10px;
+}
+
 .attachment {
 	font-size: 14px;
-	font-weight: bold;
 	font-style: italic;
 	padding-bottom: 10px;
 }
@@ -184,4 +185,9 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	padding-left: 20px;
+}
+
+.search-bar {
+	margin-left: 30%; 
+	width: 400px;
 }

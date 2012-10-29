@@ -1,17 +1,16 @@
-<h1>Sessions</h1>
-
 <% unless @featured.blank? %>
 	<div class ="hero-unit-featured">
-	  <h3>Current Session</h3>
 	  <%= render :partial => "agenda", :locals => { :agenda => @featured, :class_name => 'featured-item' } %>
 	</div>
 <% end %>
 
 <br/>
 
-<div class="list-items">
+<div class="list-items" id="agendas">
   <%= render :partial => "agenda", :collection => @agendas, :as => :agenda, :locals => { :class_name => 'list-item' } %>
 </div>
 
 <br />
+
+<%= will_paginate @agendas %>
 

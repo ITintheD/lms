@@ -4,9 +4,9 @@ class AnnouncementsController < ApplicationController
   def index
     @featured = Announcement.current_featured
     if @featured
-      @announcements = Announcement.where('id <> ?', @featured.id).order('created_at DESC')
+      @announcements = Announcement.where('id <> ?', @featured.id).order('created_at DESC').page(params[:page]).per_page(10)
     else
-      @announcements = Announcement.order('created_at DESC')
+      @announcements = Announcement.order('created_at DESC').page(params[:page]).per_page(10)
     end
     
     respond_to do |format|

@@ -1,8 +1,5 @@
-<h1>Announcements</h1>
-
 <% unless @featured.blank? %>
 	<div class ="hero-unit-featured">
-	  <h3>Featured Announcement</h3>
 	  <%= render :partial => "announcement", :locals => { :announcement => @featured, :class_name => 'featured-item' } %>
 	</div>
 <% end %>

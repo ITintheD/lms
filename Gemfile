@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem 'jquery-fileupload-rails'
 gem 'unread'
 gem 'seed-fu'
+gem 'will_paginate', '> 3.0'
 
 
 
