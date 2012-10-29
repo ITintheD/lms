@@ -129,6 +129,7 @@ DEPENDENCIES
   devise
   jquery-fileupload-rails
   jquery-rails
+  mime-types
   mysql2
   rails (= 3.2.8)
   rmagick

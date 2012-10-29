@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class DocUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MimeTypes
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -16,6 +17,13 @@ class DocUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  process :set_content_type
+
+  def set_content_type(*args)
+    content_type = "Content-Disposition: attachment"
+
+    self.file.instance_variable_set(:@content_type, content_type)
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')

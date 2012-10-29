@@ -2,8 +2,13 @@ class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
-    @featured_resources = Resource.where(:featured => true).order("created_at DESC").page(params[:page]).per_page(10)    
-    @resources = Resource.where('id <> ?', @featured_resources).order("created_at DESC").page(params[:page]).per_page(10)
+    @featured_resources = Resource.where(:featured => true).order("created_at DESC")  
+    unless @featured_resources.blank?  
+    	@resources = Resource.where('id <> ?', @featured_resources.pluck(&:id)).order("created_at DESC")
+    else
+    	@resources = Resource.order("created_at DESC")
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }
