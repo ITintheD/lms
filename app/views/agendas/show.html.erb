@@ -4,6 +4,12 @@
   <h2><%= @agenda.title.humanize %> session</h2>
   <div class="body">
     <div class="body-text"><%= raw @agenda.body %></div>
+    <% unless @agenda.doc.blank? %>
+      <div class="attachment">
+        <span>View File: <%= link_to File.basename(@agenda.doc.path), @agenda.doc_url, :target => "_blank", :class=>"btn", :style=>"color: black;"  %></span>
+
+      </div>
+    <% end %>
     <div class="instructor-info">
       <p><%= image_tag(@agenda.instructor.photo_url, :width => 30) %> Created by <%= @agenda.instructor.email unless @agenda.instructor.blank? %>, <%= time_ago_in_words(@agenda.created_at) %> ago</p>
       <div class="tag_cloud">
