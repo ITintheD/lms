@@ -1,18 +1,24 @@
 <div class="<%= class_name %>">
   <% if current_user && agenda.unread?(current_user)%>
-    <p class="title"><%= link_to agenda.week.title + ": " + agenda.title + " (unread)", agenda_path(agenda) %></p>
+    <p class="title">
+    <a href="<%= agenda_path(agenda) %>"><%= agenda.week.title %> : <%=agenda.title %> <span class="label label-warning">unread</span></a>
+    </p>
   <% else %>
     <p class="title"><%= link_to agenda.week.title + ": " + agenda.title, agenda_path(agenda) %></p>
   <% end %>
   <div class="body-text"><%= raw truncate(agenda.body, :length => 300, :omission => '...') %></div>
   <% unless agenda.doc.blank? %>
     <div class="attachment">
-      <span>View File: <%= link_to File.basename(agenda.doc.path), agenda.doc_url, :target => "_blank"  %></span>
+      <span>View File: <%= link_to File.basename(agenda.doc.path), agenda.doc_url, :target => "_blank", :class=>"btn", :style=>"color: black;"  %></span>
+      
     </div>
   <% end %>
-  <div class="tag_cloud">
-    <%= render :partial => "tag_cloud", :locals => { :week => agenda.week } %>
-  </div>
+
   <br/>
-  <p class="instructor-info">Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
+  <div class="instructor-info">
+    <p><%= image_tag(agenda.instructor.photo_url, :width => 30) %> Created by <%= agenda.instructor.email unless agenda.instructor.blank? %>, <%= time_ago_in_words(agenda.created_at) %> ago</p>
+    <div class="tag_cloud">
+      <%= render :partial => "tag_cloud", :locals => { :week => agenda.week } %>
+    </div>
+  </div>
 </div>  

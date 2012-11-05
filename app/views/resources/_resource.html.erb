@@ -1,7 +1,7 @@
 <div class="<%= class_name %>">
   
   <% if current_user && resource.unread?(current_user) && ((!resource.doc_url.blank?) || (!resource.link.blank?)) %>
-  <p class="title"><%= resource.title + " (unread)" %></p>
+  <p class="title"><%= resource.title %> <span class="label label-warning">unread</span></p>
   <% else %>
   <p class="title"><%= resource.title %></p>
   <% end %>
@@ -9,7 +9,7 @@
   <p class="link"><%= link_to resource.link, resource.link, :onclick => "mark_resource_as_read('#{resource.id}');" unless resource.link.blank? %></p>
   <% unless resource.doc.blank? %>
     <div class="attachment">
-      <span>View File: <%= link_to File.basename(resource.doc.path), resource.doc_url, :target => "_blank"  %></span>
+      <span>View File: <%= link_to File.basename(resource.doc.path), resource.doc_url, :target => "_blank", :class => "btn", :style => "color: black;"  %></span>
     </div>
     <br/>
   <% end %>

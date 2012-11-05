@@ -11,13 +11,20 @@
 </head>
 <body>
   <div class="container-fluid">
-    <%= render :partial => '/layouts/admin/navbar' %>
-    <div class="row-fluid main_content">      
-      <div class="span2">
-        <%= render :partial => '/layouts/admin/leftnav' %>
-      </div>   
-      <div class="span10">     
-        <%= yield %>
+    <div class="row-fluid">
+      <%= render :partial => '/layouts/admin/navbar' %>
+    </div>
+    <div class="row-fluid main_content">
+      <%= render :partial => '/layouts/admin/leftnav' %>
+      <div class="main_body">
+        <% if flash[:notice] %>
+          <div class="alert">
+            <%= flash[:notice] %>
+            <button type="button" class="close" data-dismiss="alert">×</button>
+          </div>
+          <% end %>     
+          <%= yield %>
+        </div>
       </div>
     </div>
     <div class="row-fluid">

@@ -1,6 +1,4 @@
-<h1>Resources</h1>
-<br/>
-<p><%= link_to 'New Resource', new_admin_resource_path, :class => "btn" %></p><br/>
+<p><%= link_to 'New Resource', new_admin_resource_path, :class => "btn btn-primary" %></p><br/>
 
 <div class="list-items">
   <%= render :partial => "resource", :collection => @resources, :as => :resource, :locals => { :class_name => 'list-item' } %>

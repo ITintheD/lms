@@ -17,6 +17,20 @@
 //= require_tree .
 
 
+$(function(){
+	var fullpath = window.location.pathname;
+	fullpath = fullpath.replace(/^\/|\/$/g, '');
+	fullpath = fullpath.replace(/^\admin\//, '');
+	if(fullpath && fullpath != "admin") {
+		var elementname = "li." + fullpath + " a"; 
+		$(elementname).css("background-color", "#C6E3F3");
+		$(elementname).css("color", "black");
+	} else {
+		var elementname = "li.announcements a"; 
+		$(elementname).css("background-color", "#C6E3F3");
+		$(elementname).css("color", "black");		
+	}
+});
 
 
 $(function () {
@@ -38,4 +52,16 @@ function mark_resource_as_read(resource_id) {
 	});	
 }
 
+$(function () {
+  if($('.pagination').length) {
+    $(window).scroll(function() {
+      url = $('.pagination .next_page').attr('href');
+      if(url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Fetching more...");
+        $.getScript(url);
+			}
+		});
+	}
+  $(window).scroll();
+});
 

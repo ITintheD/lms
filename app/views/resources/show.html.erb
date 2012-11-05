@@ -5,4 +5,10 @@
   <div class="body-text"><%= @resource.description %></div>
   <p class="link"><%= link_to @resource.link, @resource.link unless @resource.link.blank? %></p>
   <p class="instructor-info">Created at <%= time_ago_in_words(@resource.created_at) %> ago</p>
+  <% unless @resource.doc.blank? %>
+    <div class="attachment">
+      <span>View File: <%= link_to File.basename(@resource.doc.path), @resource.doc_url, :target => "_blank", :class => "btn", :style => "color: black;"  %></span>
+    </div>
+    <br/>
+  <% end %>
 </div>

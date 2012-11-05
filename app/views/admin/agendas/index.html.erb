@@ -1,7 +1,4 @@
-<h1>Sessions</h1>
-<br/>
-
-<p><%= link_to "Create New", new_admin_agenda_path, :class => "btn" %></p>
+<p><%= link_to "New Session", new_admin_agenda_path, :class => "btn btn-primary" %></p>
 
 <div class="list-items">
   <%= render :partial => "agenda", :collection => @agendas, :as => :agenda, :locals => { :class_name => 'list-item' } %>

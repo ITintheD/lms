@@ -1,0 +1,6 @@
+$('#agendas').append('<%= escape_javascript(render :partial => "agenda", :collection => @agendas, :as => :agenda, :locals => { :class_name => "list-item" } ) %>');
+<% if @agendas.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript(will_paginate(@agendas)) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

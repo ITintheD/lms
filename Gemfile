@@ -8,6 +8,10 @@ gem 'mysql2'
 # Authentication Gems
 gem 'devise'
 
+gem 'execjs'
+
+gem 'therubyracer'
+
 
 # Feature Specific Gems
 gem "rmagick"
@@ -16,6 +20,8 @@ gem 'jquery-fileupload-rails'
 gem 'unread'
 gem 'seed-fu'
 gem 'mime-types'
+gem 'will_paginate', '> 3.0'
+
 
 
 # Gems used only for assets and not required

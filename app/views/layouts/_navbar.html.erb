@@ -3,8 +3,7 @@
     <%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px" %>
     <% if current_user || current_instructor %>
       <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><%= link_to 'Weekly Sessions', agendas_path %></li>
+        <li class="agendas"><%= link_to 'Weekly Sessions', agendas_path %></li>
           <!--
           <li id="fat-menu" class="dropdown">
           
@@ -17,10 +16,9 @@
           -->
           </li>  
         </li>
-        <li><%= link_to "About", about_page_path %></li>
+        <li class="about"><%= link_to "About", about_page_path %></li>
       </ul>
     <% end %>
     <%= render :partial => "/layouts/signin" %>
   </div>
 </div>
-

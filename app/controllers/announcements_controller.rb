@@ -4,14 +4,9 @@ class AnnouncementsController < ApplicationController
   def index
     @featured = Announcement.current_featured
     if @featured
-      @announcements = Announcement.where('id <> ?', @featured.id).order('created_at DESC')
+      @announcements = Announcement.where('id <> ?', @featured.id).page(params[:page]).per_page(5).order('created_at DESC')
     else
-      @announcements = Announcement.order('created_at DESC')
-    end
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @announcements }
+      @announcements = Announcement.page(params[:page]).per_page(5).order('created_at DESC')
     end
   end
 

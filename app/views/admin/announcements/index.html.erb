@@ -1,6 +1,4 @@
-<h1>Announcements</h1>
-<br/>
-<p><%= link_to 'Create New', new_admin_announcement_path, :class => "btn" %></p>
+<p><%= link_to 'New Announcement', new_admin_announcement_path, :class => "btn btn-primary" %></p>
 
 <div class="list-items">
   <%= render :partial => "announcement", :collection => @announcements, :as => :announcement, :locals => { :class_name => 'list-item' } %>

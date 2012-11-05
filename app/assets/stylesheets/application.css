@@ -12,6 +12,105 @@
  *= require_tree .
  */
 
+/***************** MAIN CONTENT ************************/
+
+/*  Push the main content down some */
+
+.main_content {
+	padding-top: 90px;
+}
+
+.main_content h2 {
+	padding-bottom: 20px;
+	color: #194775;
+}
+
+.main_body {
+	padding-left: 250px;
+}
+
+/***************** TOP NAV BAR *************************/
+
+
+.admin_dash {
+	font-size: 30px;
+	padding-top: 20px;
+	margin-left: 40%;
+	margin-right: 10%;
+	text-transform: uppercase;
+}
+
+
+/***************** LEFT NAV BAR ************************/
+
+.leftnavpane {
+	background-image: none; 
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
+	min-width: 220px;
+	max-width: 220px;
+}
+
+.nav-tabs li {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.nav-tabs i {
+	float: right;
+}
+
+/****************** MAIN ITEMS ******************************/
+
+/**** FEATURED ITEM FOR THE ANNOUNCEMENTS AND SESSIONS PAGES *****/
+
+.hero-unit-featured {
+	padding: 15px;
+	margin-bottom: 10px;
+	height-min: 120px;
+	background-color: #2F78C0; 
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	color: white;
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
+	
+}
+
+/**** FEATURED ITEM FOR THE RESOURCE PAGE *****/
+
+.suggested-resource-item {
+	padding: 20px;
+	margin-bottom: 10px;
+	background-color: #2F78C0; 
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;	
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
+}
+
+/***** STUDENT AND INSTRUCTOR PROFILE PAGES *******/
+
+.profile-item {
+	margin-bottom: 10px;
+	background-color: #C6E3F3; 
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 15px;
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
+}
+
+/***** LIST ITEMS *******/
 
 .list-item {
 	padding: 20px;
@@ -21,70 +120,38 @@
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 	margin-left: 25px;
-	
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
 }
 
-.suggested-resource-item {
+.item {
 	padding: 20px;
 	margin-bottom: 10px;
-	background-color: #2F78C0; /*#F8F8F8;*/
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;	
-}
-
-
-.hero-unit-featured {
-	padding: 15px;
-	margin-bottom: 10px;
-	height-min: 120px;
-	background-color: #2F78C0; /*#F8F8F8;*/
+	background-color: #C6E3F3; /*#ECF7FD;*/
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
-	color: white;
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
 }
 
+/***************** FEATURED AND LIST ITEMS TITLES (and A, H3, etc) *********/
 
-.hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a {
-	color: white;
-}
-
-.tag_cloud a.tag1 { font-size: 1.0em; font-weight: 400; }
-.tag_cloud a.tag2 { font-size: 1.2em; font-weight: 500; }
-.tag_cloud a.tag3 { font-size: 1.6em; font-weight: 600; }
-.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 700; }
-.tag_cloud a.tag5 { font-size: 2.0em; font-weight: 800; }
-
-.tag_cloud {
-	padding-left: 20px;
-}
-
-.suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a {
-	color: white;
-}
-
-
-.featured-item .title a {
-	font-size: 30px;
-}
-
-
-.leftnavpane {
-	background-color: #F8F8F8;
-	height: 100%;
-	width: 178px;
-	padding: 60px;
-}
-
-.list-item .title, .hero-unit-featured .title, .suggested-resource-item .title {
+.featured-item .title a, .list-item .title, .hero-unit-featured .title, .suggested-resource-item .title {
 	font-weight: bold;
 	font-size: 24px;
+	line-height: 1.5;
+	
+}
+
+.suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a, .hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a  {
+	color: white;
 }
 
 .list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text, .suggested-resource-item .body-text  {
-	font-size: 18px;
-	line-height: 1.5;
+	font-size: 14px;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
@@ -105,42 +172,52 @@
 	
 }
 
+.body-text {
+	text-indent: 20px;
+}
 
-
-.nav-tabs li {
+.item .body-text p {
 	font-size: 16px;
+}
+
+.attachment {
+	font-size: 14px;
+	font-style: italic;
+	padding-bottom: 10px;
+}
+
+.action_links {
 	font-weight: bold;
-}
-
-
-.main_content {
-	padding-top: 90px;
-}
-
-.main_content h1 {
-	font-size: 45px;
 	text-transform: uppercase;
-	padding-bottom: 40px;
-	color: #194775;
+	padding-left: 20px;
 }
 
-.item {
-	padding: 20px;
-	margin-bottom: 10px;
-	background-color: #C6E3F3; /*#ECF7FD;*/
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+.search-bar {
+	margin-left: 30%; 
+	width: 400px;
 }
 
-.profile-item {
-	margin-bottom: 10px;
-	background-color: #C6E3F3; /*#ECF7FD;*/
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	padding: 15px;
+
+/****************** TAGS *********************/
+
+
+.tag_cloud a.tag1 { font-size: 1.5em; font-weight: 600; }
+.tag_cloud a.tag2 { font-size: 1.6em; font-weight: 700; }
+.tag_cloud a.tag3 { font-size: 1.7em; font-weight: 800; }
+.tag_cloud a.tag4 { font-size: 1.8em; font-weight: 900; }
+
+
+.tag_cloud {
+	font-style: italic;
 }
+
+.tag_cloud div {
+	margin-top: 10px;
+}
+
+
+/************ PROFILE ITEM *****************************/
+
 
 .profile-item img {
 	padding-right: 10px;
@@ -155,33 +232,9 @@
 	padding-left: 120px;
 }
 
-.item .body-text p {
-	font-size: 16px;
-	line-height: 1.5;
-}
 
 
-.admin_dash {
-	font-size: 30px;
-	padding-top: 20px;
-	margin-left: 40%;
-	margin-right: 10%;
-	text-transform: uppercase;
-}
 
-.tag_cloud {
-	font-style: italic;
-}
 
-.attachment {
-	font-size: 14px;
-	font-weight: bold;
-	font-style: italic;
-	padding-bottom: 10px;
-}
 
-.action_links {
-	font-weight: bold;
-	text-transform: uppercase;
-	padding-left: 20px;
-}
+
