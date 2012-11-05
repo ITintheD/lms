@@ -5,7 +5,7 @@ class InstructorsController < ApplicationController
   skip_before_filter :check_access, :except => :create_photo
   
   def index
-    @instructors = Instructor.order("firstname DESC")
+    @instructors = Instructor.order("firstname ASC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @instructors }

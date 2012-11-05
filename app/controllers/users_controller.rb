@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   
   def index
-    @users = User.order("firstname DESC")
+    @users = User.order("firstname ASC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
