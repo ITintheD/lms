@@ -1,22 +1,61 @@
-<ul class="nav nav-tabs nav-stacked bs-docs-sidenav affix span2">
+<ul class="nav nav-tabs nav-stacked affix span2 leftnavpane">
   <% if current_user %>
-    <li class="active_side_nav"><%= link_to "Announcements" + " (" + Announcement.unread_by(current_user).size.to_s + " unread)", announcements_path %></li>
-    <li><%= link_to "Sessions" + " (" + Agenda.unread_by(current_user).size.to_s + " unread)", agendas_path %></li>
-    <li><%= link_to "Resources" + " (" + Resource.unread_by(current_user).size.to_s + " unread)", resources_path %></li>
-    <li><%= link_to "Discussion", "https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012" %>
-    <li><%= link_to "Instructor Profiles", instructors_path %></li>
-    <li><%= link_to "Student Profiles", users_path %></li>
+    <li class="active_side_nav announcements">
+      <a href="<%= announcements_path %>">
+      Announcements <span class="badge badge-warning"><%= Announcement.unread_by(current_user).size.to_s %></span> 
+      <i class="icon-chevron-right"> </i>
+      </a>      
+    </li>
+    <li class="agendas">
+      <a href="<%= agendas_path %>">
+      Sessions <span class="badge badge-warning"><%= Agenda.unread_by(current_user).size.to_s %></span> 
+      <i class="icon-chevron-right"> </i>
+      
+      </a>
+    </li>
+    <li class="resources">
+      <a href="<%= resources_path %>">
+      Resources <span class="badge badge-warning"><%= Resource.unread_by(current_user).size.to_s %></span> 
+      <i class="icon-chevron-right"> </i>
+      </a>
+    </li>      
+    <li><a href ="https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012">Discussion
+      <i class="icon-chevron-right"> </i>
+      </a>
+    </li>    
+    <li class="instructors">
+      <a href="<%= instructors_path %>">Instructor Profiles
+        <i class="icon-chevron-right"> </i>
+      </a>
+    </li>
+    <li class="users">
+      <a href="<%= users_path %>">Student Profiles
+        <i class="icon-chevron-right"> </i>
+      </a>
+    </li>
   <% elsif current_instructor %>
-  <li><%= link_to "Announcements", announcements_path %></li>
-  <li><%= link_to "Sessions", agendas_path %></li>
-  <li><%= link_to "Resources", resources_path %></li>
-  <li><%= link_to "Discussion", "https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012" %>
-  <li><%= link_to "Instructor Profiles", instructors_path %></li>
-  <li><%= link_to "Student Profiles", users_path %></li>  
+    <li><%= link_to "Announcements", announcements_path %></li>
+    <li><%= link_to "Sessions", agendas_path %></li>
+    <li><%= link_to "Resources", resources_path %></li>
+    <li><a href ="https://groups.google.com/forum/?fromgroups=#!forum/itinthed_fall2012">Discussion
+      <i class="icon-chevron-right"> </i>
+      </a>
+    </li>    
+    <li class="instructors">
+      <a href="<%= instructors_path %>">Instructor Profiles
+        <i class="icon-chevron-right"> </i>
+      </a>
+    </li>
+    <li class="users">
+      <a href="<%= users_path %>">Student Profiles
+        <i class="icon-chevron-right"> </i>
+      </a>
+    </li>
   <% else %>
-    <li><%= link_to "Instructor Profiles", instructors_path %></li>
+    <li class="instructors">
+      <a href="<%= instructors_path %>">Instructor Profiles
+        <i class="icon-chevron-right"> </i>
+      </a>
+    </li>  
   <% end %>
-  
-  
-  
 </ul>

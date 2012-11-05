@@ -1,6 +1,8 @@
 <div class="<%= class_name %>">
   <% if current_user && agenda.unread?(current_user)%>
-    <p class="title"><%= link_to agenda.week.title + ": " + agenda.title + " (unread)", agenda_path(agenda) %></p>
+    <p class="title">
+    <a href="<%= agenda_path(agenda) %>"><%= agenda.week.title %> : <%=agenda.title %> <span class="label label-warning">unread</span></a>
+    </p>
   <% else %>
     <p class="title"><%= link_to agenda.week.title + ": " + agenda.title, agenda_path(agenda) %></p>
   <% end %>

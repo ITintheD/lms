@@ -17,6 +17,13 @@
 //= require_tree .
 
 
+$(function(){
+	var fullpath = window.location.pathname;
+	fullpath = fullpath.replace(/^\/|\/$/g, '');
+	var elementname = "li." + fullpath + " a"; 
+	$(elementname).css("background-color", "#C6E3F3");
+	$(elementname).css("color", "black");	
+});
 
 
 $(function () {
@@ -50,5 +57,4 @@ $(function () {
 	}
   $(window).scroll();
 });
-
 

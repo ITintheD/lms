@@ -46,12 +46,12 @@ module Admin
 		@agenda.instructor = current_instructor if current_instructor
 		respond_to do |format|
 		  if @agenda.save
-		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if (params[:mail][:flag] == "1")
-			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully created.' }
-			format.json { render json: @agenda, status: :created, location: @agenda }
+  		  send_mail(@agenda.week.title, @agenda.title, @agenda.body) if (params[:mail][:flag] == "1") 
+			  format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully created.' }
+			  format.json { render json: @agenda, status: :created, location: @agenda }
 		  else
-			format.html { render action: "new" }
-			format.json { render json: @agenda.errors, status: :unprocessable_entity }
+			  format.html { render action: "new" }
+			  format.json { render json: @agenda.errors, status: :unprocessable_entity }
 		  end
 		end
 	  end
@@ -63,12 +63,12 @@ module Admin
 
 		respond_to do |format|
 		  if @agenda.update_attributes(params[:agenda])
-		  send_mail(APP_CONFIG["group_email"], "#{@agenda.week.title} Agenda: #{@agenda.title}", "#{@agenda.body}") if (params[:mail][:flag] == "1") 
-			format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
-			format.json { head :no_content }
+		    send_mail(@agenda.week.title, @agenda.title, @agenda.body) if (params[:mail][:flag] == "1") 
+			  format.html { redirect_to admin_agendas_path, notice: 'Agenda was successfully updated.' }
+			  format.json { head :no_content }
 		  else
-			format.html { render action: "edit" }
-			format.json { render json: @agenda.errors, status: :unprocessable_entity }
+			  format.html { render action: "edit" }
+			  format.json { render json: @agenda.errors, status: :unprocessable_entity }
 		  end
 		end
 	  end
@@ -87,8 +87,8 @@ module Admin
 	  
 	  protected
 	  
-	  def send_mail(email, subject, body)
-	    GroupMailer.custom_email(email, subject, body).deliver
+	  def send_mail(week_title, title, body)
+	    GroupMailer.custom_email(APP_CONFIG["group_email"], "#{week_title} Agenda: #{title}", body).deliver
     end
 	end
 end
