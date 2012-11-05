@@ -1,7 +1,8 @@
 <div class="<%= class_name %>">
   <% if current_user && announcement.unread?(current_user)%>
     <p class="title">
-      <a href="<%= announcement_path(announcement) %>"><%= announcement.title %> <span class="label label-warning">unread</span></a>
+      <span class="label label-warning">unread</span>
+      <a href="<%= announcement_path(announcement) %>"><%= announcement.title %> </a>
     </p>
   <% else %>
     <p class="title"><%= link_to announcement.title, announcement_path(announcement) %></p>
