@@ -21,7 +21,10 @@ $(function(){
 	var fullpath = window.location.pathname;
 	fullpath = fullpath.replace(/^\/|\/$/g, '');
 	fullpath = fullpath.replace(/^\admin\//, '');
-	if(fullpath && fullpath != "admin") {
+	if ((fullpath.indexOf("edit") >= 0) || (fullpath.indexOf("new") >= 0) || (fullpath.indexOf("\/") >= 0) || (fullpath.indexOf("admin") >= 0) ) {
+		fullpath = null;
+	}
+	if(fullpath) {
 		var elementname = "li." + fullpath + " a"; 
 		$(elementname).css("background-color", "#C6E3F3");
 		$(elementname).css("color", "black");	
