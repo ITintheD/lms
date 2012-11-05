@@ -1,6 +1,9 @@
 class AgendasController < ApplicationController
   # GET /agendas
   # GET /agendas.json
+  
+  skip_before_filter :check_access
+  
   def index
     @featured = Agenda.current_featured
     if @featured
