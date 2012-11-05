@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def check_access
     unless current_user || current_instructor
-      redirect_to about_page_path
+      redirect_to new_user_session_path
     end
   end
   

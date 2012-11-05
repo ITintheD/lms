@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 	
 	def check_access
 		unless current_instructor
-			redirect_to root_path
+			redirect_to new_instructor_session_path
 		end
 	end
 end
