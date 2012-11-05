@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="item">
-  <h2><%= @resource.title.humanize %></h2>
+  <h2><%= @resource.title %></h2>
   <div class="body-text"><%= @resource.description %></div>
   <p class="link"><%= link_to @resource.link, @resource.link unless @resource.link.blank? %></p>
   <p class="instructor-info">Created at <%= time_ago_in_words(@resource.created_at) %> ago</p>

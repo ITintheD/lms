@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="item">
-  <h2><%= @agenda.title.humanize %> session</h2>
+  <h2><%= @agenda.title %> session</h2>
   <div class="body">
     <div class="body-text"><%= raw @agenda.body %></div>
     <% unless @agenda.doc.blank? %>
