@@ -34,9 +34,9 @@
 
 .admin_dash {
 	font-size: 30px;
-	padding-top: 20px;
 	margin-left: 40%;
-	margin-right: 10%;
+	margin-bottom: 0px;
+	margin-top: 15px;
 	text-transform: uppercase;
 }
 

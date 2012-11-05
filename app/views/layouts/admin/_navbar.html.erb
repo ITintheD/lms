@@ -1,9 +1,11 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner" style="background-image: none; background-color: #194775;">
-    <%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px" %>
-
+  	<div style = "float: left;">
+  	<%= link_to "Return to Student View", announcements_path, :class => "btn", :style => "margin-left: 10px" %>
+    </div>
     <%= render :partial => "/layouts/signin" %>
     <div class="admin_dash">Admin Dashboard</div>
+    
   </div>
 </div>
 
