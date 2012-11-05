@@ -24,11 +24,7 @@ $(function(){
 	if(fullpath && fullpath != "admin") {
 		var elementname = "li." + fullpath + " a"; 
 		$(elementname).css("background-color", "#C6E3F3");
-		$(elementname).css("color", "black");
-	} else {
-		var elementname = "li.announcements a"; 
-		$(elementname).css("background-color", "#C6E3F3");
-		$(elementname).css("color", "black");		
+		$(elementname).css("color", "black");	
 	}
 });
 

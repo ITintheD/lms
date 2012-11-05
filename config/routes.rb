@@ -26,7 +26,7 @@ MiniLms::Application.routes.draw do
 
   match "/admin" => "admin/announcements#index", :as => "admin_root"
 
-  root :to => 'announcements#index'
+  root :to => 'pages#home'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

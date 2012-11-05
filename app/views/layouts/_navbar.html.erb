@@ -1,10 +1,6 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-  	<% if current_user || current_instructor %>
-    	<%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px;" %>
-    <% else %>
-    	<%= link_to "IT in the D", about_page_path, :class => "brand", :style => "margin-left: 10px;" %>
-    <% end %>
+    <%= link_to "IT in the D", root_path, :class => "brand", :style => "margin-left: 10px;" %>
     <% if current_user || current_instructor %>
       <ul class="nav">
         <li class="agendas"><%= link_to 'Weekly Sessions', agendas_path %></li>
@@ -20,7 +16,6 @@
           -->
           </li>  
         </li>
-        <li class="about"><%= link_to "About", about_page_path %></li>
       </ul>
     <% end %>
     <%= render :partial => "/layouts/signin" %>
