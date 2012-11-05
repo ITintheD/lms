@@ -20,9 +20,16 @@
 $(function(){
 	var fullpath = window.location.pathname;
 	fullpath = fullpath.replace(/^\/|\/$/g, '');
-	var elementname = "li." + fullpath + " a"; 
-	$(elementname).css("background-color", "#C6E3F3");
-	$(elementname).css("color", "black");	
+	fullpath = fullpath.replace(/^\admin\//, '');
+	if(fullpath && fullpath != "admin") {
+		var elementname = "li." + fullpath + " a"; 
+		$(elementname).css("background-color", "#C6E3F3");
+		$(elementname).css("color", "black");
+	} else {
+		var elementname = "li.announcements a"; 
+		$(elementname).css("background-color", "#C6E3F3");
+		$(elementname).css("color", "black");		
+	}
 });
 
 

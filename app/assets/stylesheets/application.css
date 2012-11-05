@@ -17,7 +17,7 @@
 /*  Push the main content down some */
 
 .main_content {
-	padding-top: 110px;
+	padding-top: 90px;
 }
 
 .main_content h2 {
@@ -125,25 +125,29 @@
 	box-shadow: 5px 5px 5px lightgrey;
 }
 
-
-/***************** FEATURED ITEMS **********************/
-
-.featured-item .title a {
-	font-size: 24px;
-	line-height: 1.5;
+.item {
+	padding: 20px;
+	margin-bottom: 10px;
+	background-color: #C6E3F3; /*#ECF7FD;*/
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 5px 5px 5px lightgrey;
+	-webkit-box-shadow: 5px 5px 5px lightgrey;
+	box-shadow: 5px 5px 5px lightgrey;
 }
 
-.suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a {
-	color: white;
-}
+/***************** FEATURED AND LIST ITEMS TITLES (and A, H3, etc) *********/
 
-
-
-/***************** LIST ITEM AND FEATURED ITEM *********/
-
-.list-item .title, .hero-unit-featured .title, .suggested-resource-item .title {
+.featured-item .title a, .list-item .title, .hero-unit-featured .title, .suggested-resource-item .title {
 	font-weight: bold;
 	font-size: 24px;
+	line-height: 1.5;
+	
+}
+
+.suggested-resource-item, .suggested-resource-item h3, .suggested-resource-item .title, .suggested-resource-item a, .hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a  {
+	color: white;
 }
 
 .list-item .body-text p, .hero-unit-featured .body-text p, .profile-item .body-text, .suggested-resource-item .body-text  {
@@ -168,23 +172,8 @@
 	
 }
 
-/***************** LIST ITEMS **************************/
-
-
 .body-text {
 	text-indent: 20px;
-}
-
-.item {
-	padding: 20px;
-	margin-bottom: 10px;
-	background-color: #C6E3F3; /*#ECF7FD;*/
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-moz-box-shadow: 5px 5px 5px lightgrey;
-	-webkit-box-shadow: 5px 5px 5px lightgrey;
-	box-shadow: 5px 5px 5px lightgrey;
 }
 
 .item .body-text p {
@@ -209,11 +198,8 @@
 }
 
 
-/****************** LINKS, H3, and TAGS *********************/
+/****************** TAGS *********************/
 
-.hero-unit-featured a, .hero-unit-featured h3, .hero-unit-featured .title a, .hero-unit-featured .attachment a, .hero-unit-featured .tag_cloud a {
-	color: white;
-}
 
 .tag_cloud a.tag1 { font-size: 1.5em; font-weight: 600; }
 .tag_cloud a.tag2 { font-size: 1.6em; font-weight: 700; }

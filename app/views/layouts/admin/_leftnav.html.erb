@@ -1,6 +1,22 @@
-<ul class="nav nav-tabs nav-stacked bs-docs-sidenav affix span2">
-  <li><%= link_to "Announcements", admin_announcements_path %></li>
-  <li><%= link_to "Sessions", admin_agendas_path %></li>
-  <li><%= link_to "Resources", admin_resources_path %></li>
+<ul class="nav nav-tabs nav-stacked bs-docs-sidenav affix leftnavpane">
+  <li class="active_side_nav announcements">
+    <a href="<%= admin_announcements_path %>">
+    Announcements 
+    <i class="icon-chevron-right"> </i>
+    </a>      
+  </li>
+  <li class="agendas">
+    <a href="<%= admin_agendas_path %>">
+    Sessions
+    <i class="icon-chevron-right"> </i>
+    
+    </a>
+  </li>
+  <li class="resources">
+    <a href="<%= admin_resources_path %>">
+    Resources
+    <i class="icon-chevron-right"> </i>
+    </a>
+  </li>
   
 </ul>
